@@ -1,68 +1,16 @@
-.s_product_text .l-through{
-  color: #cccccc;
-  text-decoration-line: line-through;
-}
-
-.s_product_text h6, .s_product_text h2{
-  margin-bottom: 0 !important;
-}
-
-.review_item img{
-  width: 50px;
-  height: 50px;
+.img-avatar{
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 }
 
-/* Rating */
-
-.rate {
-  float: left;
-  height: 46px;
-  padding: 0 10px;
-}
-.rate:not(:checked) > input {
-  display: none;
-}
-.rate:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:24px;
-  color:#ccc;
-}
-.rate:not(:checked) > label:before {
-  content: '★ ';
-}
-.rate > input:checked ~ label {
-  color: #ffc700;
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-  color: #deb217;
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
+.notification img{
+  width: 150px;
+  height: 150px;
+  margin:  0 auto;
+  margin-bottom: 30px;
 }
 
-.cart .ti-bag{
-  position: relative;
-}
-
-.cart .ti-bag .total-items{
-  position: absolute;
-  top: -8px;
-  right: -9px;
-  background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  line-height: 14px;
-  width: 15px;
-  text-align: center;
-  font-size: 10px;
-  color: #ffffff;
-  border-radius: 50%;
+.notification h3{
+  font-size: 26px !important;
 }

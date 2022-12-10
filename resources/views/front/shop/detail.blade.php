@@ -1,265 +1,225 @@
 @extends('front.layout.master')
 
-@section('title', 'Product')
+@section('title', 'Chi tiết sản phẩm')
 
 @section('body')
 
-<!-- Start Banner Area -->
-<section class="banner-area organic-breadcrumb">
-  <div class="container">
-    <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-      <div class="col-first">
-        <h1>Product Details Page</h1>
-        <nav class="d-flex align-items-center">
-          <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-          <a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-          <a href="single-product.html">product-details</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Banner Area -->
-
-<!--================Single Product Area =================-->
-<div class="product_image_area">
-  <div class="container">
-    <div class="row s_product_inner">
-      <div class="col-lg-6">
-        <div class="s_Product_carousel">
-          @foreach ($product->productImages as $productImage)
-          <div class="single-prd-item">
-            <img class="img-fluid" src="front/img/product/{{ $productImage->path }}" alt="image">
-          </div>
-          @endforeach
-        </div>
-      </div>
-      <div class="col-lg-5 offset-lg-1">
-        <div class="s_product_text">
-          <h3>{{$product->name}}</h3>
-          @if($product->discount != null)
-          <div class="d-flex align-items-center">
-            <h6 class="l-through mr-2">{{ $product->price }}</h6>
-            <h2>{{$product->discount}}</h2>
-          </div>
-          @else
-            <h2>{{$product->discount}}</h2>
-          @endif
-
-          <ul class="list">
-            <li><a class="active" href="#"><span>Thuộc loại</span> : Household</a></li>
-            <li><a href="#"><span>Trạng thái</span> : In Stock</a></li>
-          </ul>
-          <p>{{$product->description}}</p>
-          <div class="product_count">
-            <label for="qty">Quantity:</label>
-            <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-             class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-             class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-          </div>
-          <div class="card_area d-flex align-items-center">
-            <a class="primary-btn" href="#">Thêm vào giỏ hàng</a>
-            <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-          </div>
+<div class="page-header-area" data-bg-img="/front/img/photos/bg3.webp">
+  <div class="container pt--0 pb--0">
+    <div class="row">
+      <div class="col-12">
+        <div class="page-header-content">
+          <h2 class="title" data-aos="fade-down" data-aos-duration="1000">Product Details</h2>
+          <nav class="breadcrumb-area" data-aos="fade-down" data-aos-duration="1200">
+            <ul class="breadcrumb">
+              <li><a href="index.html">Home</a></li>
+              <li class="breadcrumb-sep">//</li>
+              <li>Product Details</li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!--================End Single Product Area =================-->
 
-<!--================Product Description Area =================-->
-<section class="product_description_area">
+<!--== Start Product Single Area Wrapper ==-->
+<section class="product-area product-single-area">
   <div class="container">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mô tả</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-         aria-selected="false">Thông tin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-         aria-selected="false">Đánh giá</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <p>{{ $product->content }}</p>
-      </div>
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="table-responsive">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td>
-                  <h5>Width</h5>
-                </td>
-                <td>
-                  <h5>128mm</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>Height</h5>
-                </td>
-                <td>
-                  <h5>508mm</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>Depth</h5>
-                </td>
-                <td>
-                  <h5>85mm</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>Weight</h5>
-                </td>
-                <td>
-                  <h5>52gm</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>Quality checking</h5>
-                </td>
-                <td>
-                  <h5>yes</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>Freshness Duration</h5>
-                </td>
-                <td>
-                  <h5>03days</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>When packeting</h5>
-                </td>
-                <td>
-                  <h5>Without touch of hand</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h5>Each Box contains</h5>
-                </td>
-                <td>
-                  <h5>60pcs</h5>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="row total_rate">
-              <div class="col-6">
-                <div class="box_total">
-                  <h5>Tổng thể</h5>
-                  <h4>
-                    @if (is_integer($avgRating))
-                      {{$avgRating}}.0
-                    @else
-                      {{round($avgRating, 1)}}
-                    @endif
-                  </h4>
-                  <h6>({{ count($product->productComments) }} Bình luận)</h6>
+    <div class="row">
+      <div class="col-12">
+        <div class="product-single-item">
+          <div class="row">
+            <div class="col-xl-6">
+              <!--== Start Product Thumbnail Area ==-->
+              <div class="product-single-thumb">
+                <div class="swiper-container single-product-thumb single-product-thumb-slider">
+                  <div class="swiper-wrapper">
+                    @foreach ($product->productImages as $productImage)
+                    <div class="swiper-slide">
+                      <a class="lightbox-image" data-fancybox="gallery" href="front/img/shop/product-single/1.webp">
+                        <img src="front/img/shop/product-single/{{ $productImage->path }}" width="570" height="541" alt="Image-HasTech">
+                      </a>
+                    </div>
+                    @endforeach
+                  </div>
+                </div>
+                <div class="swiper-container single-product-nav single-product-nav-slider">
+                  <div class="swiper-wrapper">
+                    @foreach ($product->productImages as $productImage)
+                    <div class="swiper-slide">
+                      <img src="front/img/shop/product-single/{{ $productImage->path }}" width="127" height="127" alt="Image-HasTech">
+                    </div>
+                    @endforeach
+                  </div>
                 </div>
               </div>
-              <div class="col-6">
-                <div class="rating_list">
-                  <h3>{{ count($product->productComments) }} Đánh giá</h3>
-                  <ul class="list">
-                    <li><a href="#">5 Sao <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                         class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-                    <li><a href="#">4 Sao <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                         class="fa fa-star"></i><i class="fa fa-star-o"></i> 01</a></li>
-                    <li><a href="#">3 Sao <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                         class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 01</a></li>
-                    <li><a href="#">2 Sao <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i
-                         class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 01</a></li>
-                    <li><a href="#">1 Sao <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i
-                         class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 01</a></li>
+              <!--== End Product Thumbnail Area ==-->
+            </div>
+            <div class="col-xl-6">
+              <!--== Start Product Info Area ==-->
+              <div class="product-single-info">
+                <h3 class="main-title">{{$product->name}}</h3>
+                <div class="prices">
+                  <span class="price">{{$product->discount}}đ</span>
+                </div>
+                <div class="rating-box-wrap">
+                  <div class="rating-box">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <div class="review-status">
+                    <a href="javascript:void(0)">({{count($product->productComments)}}) Bình luận</a>
+                  </div>
+                </div>
+                <p>{{$product->description}}</p>
+                <div class="product-color">
+                  <h6 class="title">Color</h6>
+                  <ul class="color-list">
+                    <li  data-bg-color="#586882"></li>
+                    <li class="active" data-bg-color="#505050"></li>
+                    <li data-bg-color="#73707a"></li>
+                    <li data-bg-color="#c7bb9b"></li>
                   </ul>
                 </div>
-              </div>
-            </div>
-            <div class="review_list">
-              @foreach ($product->productComments as $productCmt)
-                <div class="review_item">
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="front/img/user/{{$productCmt->user->avatar ?? 'default-img.jpg'}}" alt="">
-                    </div>
-                    <div class="media-body">
-                      <h4>{{$productCmt->name}} - <span>{{ date('M d, Y', strtotime($productCmt->create_at)) }}</span></h4>
-                      @for ($i = 1; $i <= 5; $i++)
-                        @if ($i <= $productCmt->rating)
-                          <i class="fa fa-star"></i>
-                        @else
-                          <i class="fa fa-star-o"></i>
-                        @endif
-                      @endfor
+                <div class="product-size">
+                  <h6 class="title">Size</h6>
+                  <ul class="size-list">
+                    <li>S</li>
+                    <li class="active">M</li>
+                    <li>L</li>
+                    <li>XL</li>
+                  </ul>
+                </div>
+                <div class="product-quick-action">
+                  <div class="qty-wrap">
+                    <div class="pro-qty">
+                      <input type="text" title="Quantity" value="1">
                     </div>
                   </div>
-                  <p>{{$productCmt->messages}}</p>
+                  <a class="btn-theme" href="./cart/add/{{$product->id}}">Add to Cart</a>
                 </div>
-              @endforeach
+                <div class="product-info-footer mt-2">
+                  <h6 class="code"><span>Code :</span>Ch-256xl</h6>
+                </div>
+              </div>
+              <!--== End Product Info Area ==-->
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="review_box">
-              <h4>Thêm bình luận</h4>
+        </div>
+      </div>
+    </div>
 
-              <form class="row contact_form d-inline-block" action="" method="post" id="contactForm" novalidate="novalidate">
-                @csrf
-                <input type="hidden" name="product_id" value="{{$product->id}}">
-                <input type="hidden" name="user_id" value="{{ \Illuminate\Support\Facades\Auth::user()->id ?? null }}">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Full name'">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="messages" id="message" rows="1" placeholder="Review" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Review'"></textarea></textarea>
+    <div class="row">
+      <div class="col-12">
+        <div class="product-review-tabs-content">
+          <ul class="nav product-tab-nav" id="ReviewTab" role="tablist">
+            <li role="presentation">
+              <a id="description-tab" data-bs-toggle="pill" href="#description" role="tab" aria-controls="description" aria-selected="false">Thông tin</a>
+            </li>
+            <li role="presentation">
+              <a id="reviews-tab" data-bs-toggle="pill" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Đánh giá <span>({{count($product->productComments)}})</span></a>
+            </li>
+          </ul>
+          <div class="tab-content product-tab-content" id="ReviewTabContent">
+            <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <div class="product-description">
+                <p>{{$product->content}}</p>
+              </div>
+            </div>
+            <div class="tab-pane fade show active" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+              <div class="product-review-content">
+                <div class="review-content-header">
+                  <h3>Đánh giá</h3>
+                  <div class="review-info">
+                    <ul class="review-rating">
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star-o"></li>
+                    </ul>
+                    <span class="review-write-btn">Viết bình luận</span>
                   </div>
                 </div>
 
-                <div class="personal-rating">
-                  <div class="rate">
-                    <input type="radio" id="star5" name="rating" value="5" />
-                    <label for="star5" title="text">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" />
-                    <label for="star4" title="text">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" />
-                    <label for="star3" title="text">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" />
-                    <label for="star2" title="text">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" />
-                    <label for="star1" title="text">1 star</label>
+                <!--== Start Reviews Form Item ==-->
+                <div class="reviews-form-area">
+                  <h4 class="title">Write a review</h4>
+                  <div class="reviews-form-content">
+                    <form action="#">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="for_name">Name</label>
+                            <input id="for_name" class="form-control" type="text" placeholder="Enter your name">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="for_email">Email</label>
+                            <input id="for_email" class="form-control" type="email" placeholder="john.smith@example.com">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <span class="title">Rating</span>
+                            <ul class="review-rating">
+                              <li class="fa fa-star-o"></li>
+                              <li class="fa fa-star-o"></li>
+                              <li class="fa fa-star-o"></li>
+                              <li class="fa fa-star-o"></li>
+                              <li class="fa fa-star-o"></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="for_review-title">Review Title</label>
+                            <input id="for_review-title" class="form-control" type="text" placeholder="Give your review a title">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="for_comment">Body of Review (1500)</label>
+                            <textarea id="for_comment" class="form-control" placeholder="Write your comments here"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-submit-btn">
+                            <button type="submit" class="btn-submit">Post comment</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
-                  <button type="submit" value="submit" class="primary-btn">Gửi bình luận</button>
-              </form>
+                <!--== End Reviews Form Item ==-->
+
+                <div class="reviews-content-body">
+                  @foreach ($product->productComments as $productCmt)
+                  <div class="review-item">
+                    <div class="review-info">
+                      <ul class="review-rating">
+                        @for ($i = 1; $i <= 5; $i++)
+                            @if ($i <= $productCmt->rating)
+                              <i class="fa fa-star"></i>
+                            @else
+                              <i class="fa fa-star-o"></i>
+                            @endif
+                          @endfor
+                      </ul>
+                    </div>
+                    <h3 class="title">{{$productCmt->name}}!</h3>
+                    <h5 class="sub-title"><span>{{$productCmt->user->name}}</span> - <span>{{ date('M d, Y', strtotime($productCmt->create_at)) }}</span></h5>
+                    <p>{{$productCmt->messages}}</p>
+                  </div>
+                @endforeach
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -267,7 +227,8 @@
     </div>
   </div>
 </section>
-<!--================End Product Description Area =================-->
+<!--== End Product Single Area Wrapper ==-->
+
 
 <!-- Start related-product Area -->
 <section class="related-product-area section_gap_bottom">

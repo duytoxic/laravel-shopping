@@ -1,141 +1,151 @@
 @extends('front.layout.master')
-@section('title', 'Product')
+@section('title', 'Giỏ hàng')
 @section('body')
-<!-- Start Banner Area -->
-<section class="banner-area organic-breadcrumb">
-  <div class="container">
-    <div
-      class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end"
-    >
-      <div class="col-first">
-        <h1>Shopping Cart</h1>
-        <nav class="d-flex align-items-center">
-          <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-          <a href="category.html">Cart</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Banner Area -->
-
-<!--================Cart Area =================-->
-<section class="cart_area">
-  <div class="container">
-    <div class="cart_inner">
-      <div class="table-responsive">
-        @if (Cart::count() > 0)
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Sản phẩm</th>
-              <th scope="col">Giá</th>
-              <th scope="col">Số lượng</th>
-              <th scope="col">Tổng tiền</th>
-              <th scope="col">Xóa</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach ($carts as $cart)
-            <tr>
-              <td>
-                <div class="media">
-                  <div class="d-flex">
-                    <img style="height: 100px; width: 100px; object-fit:cover;" src="front/img/product/{{$cart->options->images[0]->path ?? null}}" alt="cart" />
-                  </div>
-                  <div class="media-body">
-                    <p>{{$cart->name}}</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <h5>{{ number_format($cart->price,2) }}</h5>
-              </td>
-              <td>
-                <div class="product_count">
-                  <input
-                    type="text"
-                    name="qty"
-                    id="sst"
-                    maxlength="12"
-                    value="{{ $cart->qty }}"
-                    title="Quantity:"
-                    class="input-text qty"
-                  />
-                  <button
-                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                    class="increase items-count"
-                    type="button"
-                  >
-                    <i class="lnr lnr-chevron-up"></i>
-                  </button>
-                  <button
-                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                    class="reduced items-count"
-                    type="button"
-                  >
-                    <i class="lnr lnr-chevron-down"></i>
-                  </button>
-                </div>
-              </td>
-              <td>
-                <h5>{{ number_format($cart->price * $cart->qty,2) }}</h5>
-              </td>
-              <td>
-                <a class="btn btn-sm btn-danger" href="./cart/delete/{{$cart->rowId}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              </td>
-            </tr>
-            @endforeach
-
-
-            <tr class="bottom_button">
-              <td>
-                <a class="gray_btn" href="#">Cập nhật giỏ hàng</a>
-                <button class="gray_btn" onclick="confirm('Bạn có chắc muốn xóa giỏ hàng') === true ? window.location='./cart/removeAll' : ''">Làm trống giỏ hàng</button>
-              </td>
-              <td></td>
-              <td></td>
-              <td>
-                <div class="cupon_text d-flex align-items-center">
-                  <input type="text" placeholder="Coupon Code" />
-                  <a class="primary-btn" href="#">Apply</a>
-                  <a class="gray_btn" href="#">Close Coupon</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td>
-                <h5>Tổng tiền</h5>
-              </td>
-              <td>
-                <h5>{{$total}}</h5>
-              </td>
-            </tr>
-
-            <tr class="out_button_area">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div class="checkout_btn_inner d-flex align-items-center">
-                  <a class="gray_btn" href="#">Continue Shopping</a>
-                  <a class="primary-btn" href="#">Proceed to checkout</a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        @else
-        <div class="col-lg-12">
-          <h4 class="text-center">Giỏ hàng đang trống</h4>
+<!--== Start Page Header Area Wrapper ==-->
+<div class="page-header-area" data-bg-img="front/img/photos/bg3.webp">
+  <div class="container pt--0 pb--0">
+    <div class="row">
+      <div class="col-12">
+        <div class="page-header-content">
+          <h2 class="title" data-aos="fade-down" data-aos-duration="1000">Shopping Cart</h2>
+          <nav class="breadcrumb-area" data-aos="fade-down" data-aos-duration="1200">
+            <ul class="breadcrumb">
+              <li><a href="index.html">Home</a></li>
+              <li class="breadcrumb-sep">//</li>
+              <li>Shopping Cart</li>
+            </ul>
+          </nav>
         </div>
-        @endif
+      </div>
+    </div>
+  </div>
+</div>
+<!--== End Page Header Area Wrapper ==-->
 
+ <!--== Start Blog Area Wrapper ==-->
+ <section class="shopping-cart-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="shopping-cart-form table-responsive">
+
+            @if (Cart::count() > 0)
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th class="product-remove">&nbsp;</th>
+                  <th class="product-thumb">&nbsp;</th>
+                  <th class="product-name">Sản phẩm</th>
+                  <th class="product-price">Giá</th>
+                  <th class="product-quantity">Số lượng</th>
+                  <th class="product-subtotal">Tổng</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($carts as $cart)
+                <tr class="cart-product-item">
+                  <td class="product-remove">
+                    <a onclick="window.location='./cart/delete/{{$cart->rowId}}'"><i class="fa fa-trash-o"></i></a>
+                  </td>
+                  <td class="product-thumb">
+                    <a href="./shop/product/">
+                      <img src="front/img/shop/{{$cart->options->images[0]->path ?? null}}" width="90" height="110" alt="Image-HasTech">
+                    </a>
+                  </td>
+                  <td class="product-name">
+                    <h4 class="title"><a href="single-product.html">{{$cart->name}}</a></h4>
+                  </td>
+                  <td class="product-price">
+                    <span class="price">{{$cart->price}}đ</span>
+                  </td>
+                  <td class="product-quantity">
+                    <div class="pro-qty">
+                      <input type="text" class="quantity" title="Quantity" value="{{ $cart->qty }}">
+                    </div>
+                  </td>
+                  <td class="product-subtotal">
+                    <span class="price">{{ number_format($cart->price * $cart->qty,2) }}đ</span>
+                  </td>
+                </tr>
+                @endforeach
+                <tr class="actions">
+                  <td class="border-0" colspan="6">
+                    <button type="submit" class="update-cart" disabled>Cập nhật giỏ hàng</button>
+                    <button type="submit" class="clear-cart" onclick="confirm('Bạn có chắc muốn xóa giỏ hàng') === true ? window.location='./cart/removeAll' : ''">Xóa giỏ hàng</button>
+                    <a href="/shop" class="btn-theme btn-flat">Tiếp tục mua sắm</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            @else
+            <div class="col-lg-12">
+              <h4 class="text-center" >Giỏ hàng đang trống</h4>
+            </div>
+            @endif
+        </div>
+      </div>
+    </div>
+    <div class="row row-gutter-50">
+      <div class="col-md-6 col-lg-4">
+
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="shipping-form-coupon">
+          <div class="section-title-cart">
+            <h5 class="title">Mã giảm giá</h5>
+            <div class="desc">
+              <p>Enter your coupon code if you have one.</p>
+            </div>
+          </div>
+          <form action="#" method="post">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="couponCode" class="visually-hidden">Coupon Code</label>
+                  <input type="text" id="couponCode" class="form-control" placeholder="Enter your coupon code..">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <button type="submit" class="coupon-btn">Apply coupon</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="shipping-form-cart-totals">
+          <div class="section-title-cart">
+            <h5 class="title">Cart totals</h5>
+          </div>
+          <div class="cart-total-table">
+            <table class="table">
+              <tbody>
+                <tr class="cart-subtotal">
+                  <td>
+                    <p class="value">Tổng tiền</p>
+                  </td>
+                  <td>
+                    <p class="price">{{$subtotal}}đ</p>
+                  </td>
+                </tr>
+                <tr class="order-total">
+                  <td>
+                    <p class="value">Tổng</p>
+                  </td>
+                  <td>
+                    <p class="price">{{$total}}đ</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="btn-theme btn-flat" href="./checkout">Proceed to checkout</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<!--================End Cart Area =================-->
+<!--== End Blog Area Wrapper ==-->
 @endsection

@@ -1,25 +1,32 @@
-<div class="single-product">
-  <img class="img-fluid" src="front/img/product/{{$product->productImages[0]->path}}" alt="product">
-  <div class="product-details">
-    <a href="/shop/product/{{$product->id}}">{{$product->name}}</h6>
-    <div class="price">
-      @if ($product->discount != null)
-        <h6>{{$product->discount}}đ</h6>
-        <h6 class="l-through">{{$product->price}}đ</h6>
-      @else
-        <h6>{{$product->price}}đ</h6>
-      @endif
+<div class="product-item">
+  <div class="inner-content">
+    <div class="product-thumb">
+      <a href="/shop/product/{{$product->id}}">
+        <img src="front/img/shop/{{$product->productImages[0]->path}}" width="270" height="274" alt="Image-HasTech">
+      </a>
+      <div class="product-action">
+        <a class="btn-product-cart" href="./cart/add/{{$product->id}}"><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn-product-compare" href="/shop/product/{{$product->id}}"><i class="fa fa-eye"></i></a>
+      </div>
     </div>
-    <div class="prd-bottom">
-
-      <a href="./cart/add/{{$product->id}}" class="social-info">
-        <span class="ti-bag"></span>
-        <p class="hover-text">Thêm vào giỏ hàng</p>
-      </a>
-      <a href="/shop/product/{{$product->id}}" class="social-info">
-        <span class="lnr lnr-move"></span>
-        <p class="hover-text">Xem chi tiết</p>
-      </a>
+    <div class="product-info">
+      <div class="category">
+        <ul>
+          <li><a href="shop.html">Men</a></li>
+          <li class="sep">/</li>
+          <li><a href="shop.html">Women</a></li>
+        </ul>
+      </div>
+      <h4 class="title"><a href="/shop/product/{{$product->id}}">{{$product->name}}</a></h4>
+      <div class="prices">
+        @if ($product->discount != null)
+          <span class="price-old">{{$product->price}}đ</span>
+          <span class="sep">-</span>
+          <span class="price">{{$product->discount}}đ</span>
+        @else
+          <span class="price">{{$product->price}}đ</span>
+        @endif
+      </div>
     </div>
   </div>
 </div>

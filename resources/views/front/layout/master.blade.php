@@ -6,204 +6,452 @@
 <head>
 <base href="{{ asset('/') }}">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="shortcut icon" href="img/fav.png">
-  <meta name="author" content="CodePixar">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shome - Shoes eCommerce Website Template"/>
+  <meta name="keywords" content="footwear, shoes, modern, shop, store, ecommerce, responsive, e-commerce"/>
+  <meta name="author" content="codecarnival"/>
   <title>@yield('title') | Shopping</title>
-  <!--
-		CSS
-		============================================= -->
-  <link rel="stylesheet" href="front/css/linearicons.css">
-  <link rel="stylesheet" href="front/css/font-awesome.min.css">
-  <link rel="stylesheet" href="front/css/themify-icons.css">
-  <link rel="stylesheet" href="front/css/bootstrap.css">
-  <link rel="stylesheet" href="front/css/owl.carousel.css">
-  <link rel="stylesheet" href="front/css/nice-select.css">
-  <link rel="stylesheet" href="front/css/nouislider.min.css">
-  <link rel="stylesheet" href="front/css/ion.rangeSlider.css" />
-  <link rel="stylesheet" href="front/css/ion.rangeSlider.skinFlat.css" />
-  <link rel="stylesheet" href="front/css/magnific-popup.css">
-  <link rel="stylesheet" href="front/css/main.css">
-  <link rel="stylesheet" href="front/css/custom.css">
 
-  {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+  <!--== Favicon ==-->
+  <link rel="shortcut icon" href="front/img/favicon.ico" type="image/x-icon" />
+
+  <!--== Google Fonts ==-->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,500&amp;display=swap" rel="stylesheet">
+  <link href="front/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="front/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="front/css/pe-icon-7-stroke.css" rel="stylesheet" />
+  <link href="front/css/swiper.min.css" rel="stylesheet" />
+  <link href="front/css/fancybox.min.css" rel="stylesheet" />
+  <link href="front/css/aos.min.css" rel="stylesheet" />
+  <link href="front/css/style.css" rel="stylesheet" />
+  <link href="front/css/custom.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body>
-
-  <!-- Start Header Area -->
-  <header class="header_area sticky-header">
-    <div class="main_menu">
-      <nav class="navbar navbar-expand-lg navbar-light main_box">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto">
-              <li class="nav-item {{ (request()->segment(1) == '') ? 'active' : '' }}"><a class="nav-link" href="./">Trang chủ</a></li>
-              <li class="nav-item {{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a class="nav-link" href="./shop">Sản phẩm</a></li>
-              <li class="nav-item {{ (request()->segment(1) == 'blog') ? 'active' : '' }}"><a class="nav-link" href="./blog">Tin tức</a></li>
-              <li class="nav-item {{ (request()->segment(1) == 'contact') ? 'active' : '' }}"><a class="nav-link" href="./contact">Liên hệ</a></li>
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                </ul>
-              </li>
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-                  <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="nav-item"><a href="./cart" class="cart"><span class="ti-bag"><div class="total-items">{{Cart::count()}}</div></span></a></li>
-              <li class="nav-item">
-                <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
-              </li>
-            </ul>
+   <!--== Start Header Wrapper ==-->
+   <header class="main-header-wrapper position-relative">
+    <div class="header-top">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="header-top-align">
+              <div class="header-top-align-start">
+                <div class="desc">
+                  <p>Website bán giày</p>
+                </div>
+              </div>
+              <div class="header-top-align-end">
+                <div class="header-info-items">
+                  <div class="info-items">
+                    <ul>
+                      <li class="number"><i class="fa fa-phone"></i><a href="tel://0123456789">+00 123 456 789</a></li>
+                      <li class="email"><i class="fa fa-envelope"></i><a href="mailto://demo@example.com">demo@example.com</a></li>
+                      <li class="account"><i class="fa fa-user"></i><a href="account-login.html">Account</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
-    <div class="search_input" id="search_input_box">
+    <div class="header-middle">
+      <div class="container pt--0 pb--0">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="header-middle-align">
+              <div class="header-middle-align-start">
+                <div class="header-logo-area">
+                  <a href="index.html">
+                    <img class="logo-main" src="front/img/logo.webp" width="131" height="34" alt="Logo" />
+                    <img class="logo-light" src="front/img/logo-light.webp" width="131" height="34" alt="Logo" />
+                  </a>
+                </div>
+              </div>
+              <div class="header-middle-align-center">
+                <div class="header-search-area">
+                  <form class="header-searchbox" action="shop">
+                    <input type="search" name="search" class="form-control" placeholder="Search" value="{{request('search')}}">
+                    <button class="btn-submit" type="submit"><i class="pe-7s-search"></i></button>
+                  </form>
+                </div>
+              </div>
+              <div class="header-middle-align-end">
+                <div class="header-action-area">
+                  <div class="shopping-search">
+                    <button class="shopping-search-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch"><i class="pe-7s-search icon"></i></button>
+                  </div>
+                  <div class="shopping-wishlist">
+                    <a class="shopping-wishlist-btn" href="shop-wishlist.html">
+                      <i class="pe-7s-like icon"></i>
+                    </a>
+                  </div>
+                  <div class="shopping-cart">
+                    <button class="shopping-cart-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasCart" aria-controls="offcanvasRightLabel">
+                      <i class="pe-7s-shopbag icon"></i>
+                      <sup class="shop-count">{{Cart::count()}}</sup>
+                    </button>
+                  </div>
+                  <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
+                    <i class="pe-7s-menu"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-area header-default">
       <div class="container">
-        <form class="d-flex justify-content-between">
-          <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-          <button type="submit" class="btn"></button>
-          <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-        </form>
+        <div class="row no-gutter align-items-center position-relative">
+          <div class="col-12">
+            <div class="header-align">
+              <div class="header-navigation-area position-relative">
+                <ul class="main-menu nav">
+                  <li><a href="./"><span>Trang chủ</span></a></li>
+                  <li><a href="./shop"><span>Sản phẩm</span></a></li>
+                  <li><a href="./contact"><span>Liên hệ</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
-  <!-- End Header Area -->
+  <!--== End Header Wrapper ==-->
+
 
 @yield('body')
+  <!--== Scroll Top Button ==-->
+  <div id="scroll-to-top" class="scroll-to-top"><span class="fa fa-angle-up"></span></div>
 
-  <!-- start footer Area -->
-  <footer class="footer-area section_gap">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3  col-md-6 col-sm-6">
-          <div class="single-footer-widget">
-            <h6>About Us</h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-              magna aliqua.
-            </p>
+  <!--== Start Quick View Menu ==-->
+  <aside class="product-quick-view-modal">
+    <div class="product-quick-view-inner">
+      <div class="product-quick-view-content">
+        <button type="button" class="btn-close">
+          <span class="close-icon"><i class="fa fa-close"></i></span>
+        </button>
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="thumb">
+              <img src="front/img/shop/product-single/1.webp" width="570" height="541" alt="Alan-Shop">
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4  col-md-6 col-sm-6">
-          <div class="single-footer-widget">
-            <h6>Newsletter</h6>
-            <p>Stay update with our latest</p>
-            <div class="" id="mc_embed_signup">
-
-              <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-
-                <div class="d-flex flex-row">
-
-                  <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-
-
-                  <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-                  <div style="position: absolute; left: -5000px;">
-                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                  </div>
-
-                  <!-- <div class="col-lg-4 col-md-4">
-												<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-											</div>  -->
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="content">
+              <h4 class="title">Space X Bag For Office</h4>
+              <div class="prices">
+                <del class="price-old">$85.00</del>
+                <span class="price">$70.00</span>
+              </div>
+              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,</p>
+              <div class="quick-view-select">
+                <div class="quick-view-select-item">
+                  <label for="forSize" class="form-label">Size:</label>
+                  <select class="form-select" id="forSize" required>
+                    <option selected value="">s</option>
+                    <option>m</option>
+                    <option>l</option>
+                    <option>xl</option>
+                  </select>
                 </div>
-                <div class="info"></div>
-              </form>
+                <div class="quick-view-select-item">
+                  <label for="forColor" class="form-label">Color:</label>
+                  <select class="form-select" id="forColor" required>
+                    <option selected value="">red</option>
+                    <option>green</option>
+                    <option>blue</option>
+                    <option>yellow</option>
+                    <option>white</option>
+                  </select>
+                </div>
+              </div>
+              <div class="action-top">
+                <div class="pro-qty">
+                  <input type="text" id="quantity20" title="Quantity" value="1" />
+                </div>
+                <button class="btn btn-black">Add to cart</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3  col-md-6 col-sm-6">
-          <div class="single-footer-widget mail-chimp">
-            <h6 class="mb-20">Instragram Feed</h6>
-            <ul class="instafeed d-flex flex-wrap">
-              <li><img src="img/i1.jpg" alt=""></li>
-              <li><img src="img/i2.jpg" alt=""></li>
-              <li><img src="img/i3.jpg" alt=""></li>
-              <li><img src="img/i4.jpg" alt=""></li>
-              <li><img src="img/i5.jpg" alt=""></li>
-              <li><img src="img/i6.jpg" alt=""></li>
-              <li><img src="img/i7.jpg" alt=""></li>
-              <li><img src="img/i8.jpg" alt=""></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="single-footer-widget">
-            <h6>Follow Us</h6>
-            <p>Let us be social</p>
-            <div class="footer-social d-flex align-items-center">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-dribbble"></i></a>
-              <a href="#"><i class="fa fa-behance"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-        <p class="footer-text m-0">
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;<script>
-            document.write(new Date().getFullYear());
-          </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
       </div>
     </div>
+    <div class="canvas-overlay"></div>
+  </aside>
+  <!--== End Quick View Menu ==-->
+
+  <!--== Start Aside Cart Menu ==-->
+  <div class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h1 id="offcanvasRightLabel"></h1>
+      <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Giỏ hàng <i class="fa fa-chevron-right"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="aside-cart-product-list">
+        @foreach (Cart::content() as $cart)
+        <li class="product-list-item">
+          <a href="./cart/delete/{{$cart->rowId}}" class="remove">×</a>
+          <a href="./shop/product">
+            <img src="front/img/shop/{{$cart->options->images[0]->path ?? null}}" width="90" height="110" alt="Image-HasTech">
+            <span class="product-title">{{$cart->name}}</span>
+          </a>
+          <span class="product-price">{{ $cart->qty }} × {{$cart->price}}đ</span>
+        </li>
+        @endforeach
+      </ul>
+      <p class="cart-total"><span>Tổng:</span><span class="amount">
+        {{Cart::total()}}đ</span></p>
+      <a class="btn-theme" data-margin-bottom="10" href="./cart">Xem giỏ hàng</a>
+      <a class="btn-theme" href="./checkout">Thanh toán</a>
+    </div>
+  </div>
+  <!--== End Aside Cart Menu ==-->
+
+  <!--== Start Aside Search Menu ==-->
+  <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-header">
+      <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="pe-7s-close"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="container pt--0 pb--0">
+        <div class="search-box-form-wrap">
+          <div class="search-note">
+            <p>Start typing and press Enter to search</p>
+          </div>
+          <form action="#" method="post">
+            <div class="search-form position-relative">
+              <label for="search-input" class="visually-hidden">Search</label>
+              <input id="search-input" type="search" class="form-control" placeholder="Search entire store…">
+              <button class="search-button"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <!--== End Aside Search Menu ==-->
+  <footer class="footer-area">
+    <!--== Start Footer Main ==-->
+    <div class="footer-main">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <!--== Start widget Item ==-->
+            <div class="widget-item">
+              <div class="about-widget-wrap">
+                <div class="widget-logo-area">
+                  <a href="index.html">
+                    <img class="logo-main" src="assets/img/logo-light.webp" width="131" height="34" alt="Logo" />
+                  </a>
+                </div>
+                <p class="desc">Lorem ipsum dolor sit amet consl adipisi elit, sed do eiusmod templ incididunt ut labore</p>
+                <div class="social-icons">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                  <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="fa fa-dribbble"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            <!--== End widget Item ==-->
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <!--== Start widget Item ==-->
+            <div class="widget-item widget-services-item">
+              <h4 class="widget-title">Services</h4>
+              <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Services</h4>
+              <div id="widgetId-1" class="collapse widget-collapse-body">
+                <div class="collapse-body">
+                  <div class="widget-menu-wrap">
+                    <ul class="nav-menu">
+                      <li><a href="contact.html">Home monitoring</a></li>
+                      <li><a href="contact.html">Air Filters</a></li>
+                      <li><a href="contact.html">Professional installation</a></li>
+                      <li><a href="contact.html">Smart Buildings</a></li>
+                      <li><a href="contact.html">For contractors</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--== End widget Item ==-->
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <!--== Start widget Item ==-->
+            <div class="widget-item widget-account-item">
+              <h4 class="widget-title">My Account</h4>
+              <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">My Account</h4>
+              <div id="widgetId-2" class="collapse widget-collapse-body">
+                <div class="collapse-body">
+                  <div class="widget-menu-wrap">
+                    <ul class="nav-menu">
+                      <li><a href="account-login.html">My Account</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="shop-cart.html">Shopping cart</a></li>
+                      <li><a href="shop.html">Shop</a></li>
+                      <li><a href="account-login.html">Services Login</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--== End widget Item ==-->
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <!--== Start widget Item ==-->
+            <div class="widget-item">
+              <h4 class="widget-title">Contact Info</h4>
+              <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Contact Info</h4>
+              <div id="widgetId-3" class="collapse widget-collapse-body">
+                <div class="collapse-body">
+                  <div class="widget-contact-wrap">
+                    <ul>
+                      <li><span>Address:</span> Your address goes here.</li>
+                      <li><span>Phone//fax:</span> <a href="tel://0123456789">0123456789</a></li>
+                      <li><span>Email:</span> <a href="mailto://demo@example.com">demo@example.com</a></li>
+                      <li><a target="_blank" href="https://www.hasthemes.com/">www.example.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--== End widget Item ==-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Main ==-->
+
+    <!--== Start Footer Bottom ==-->
+    <div class="footer-bottom">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-md-7 col-lg-6">
+            <p class="copyright">© 2021 Shome. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival/portfolio">Codecarnival.</a></p>
+          </div>
+          <div class="col-md-5 col-lg-6">
+            <div class="payment">
+              <a href="account-login.html"><img src="assets/img/photos/payment-card.webp" width="192" height="21" alt="Payment Logo"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Bottom ==-->
   </footer>
-  <!-- End footer Area -->
 
-  <script src="front/js/vendor/jquery-2.2.4.min.js"></script>
-  <script src="../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="front/js/vendor/bootstrap.min.js"></script>
-  <script src="front/js/jquery.ajaxchimp.min.js"></script>
-  <script src="front/js/jquery.nice-select.min.js"></script>
-  <script src="front/js/jquery.sticky.js"></script>
-  <script src="front/js/nouislider.min.js"></script>
-  <script src="front/js/countdown.js"></script>
-  <script src="front/js/jquery.magnific-popup.min.js"></script>
-  <script src="front/js/owl.carousel.min.js"></script>
-  <!--gmaps Js-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-  <script src="front/js/gmaps.min.js"></script>
-  <script src="front/js/main.js"></script>
+<!--=== jQuery Modernizr Min Js ===-->
+<script src="front/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="front/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="front/js/jquery-migrate.js"></script>
+<!--=== jQuery Popper Min Js ===-->
+<script src="front/js/popper.min.js"></script>
+<!--=== jQuery Bootstrap Min Js ===-->
+<script src="front/js/bootstrap.min.js"></script>
+<!--=== jQuery Ui Min Js ===-->
+<script src="front/js/jquery-ui.min.js"></script>
+<!--=== jQuery Swiper Min Js ===-->
+<script src="front/js/swiper.min.js"></script>
+<!--=== jQuery Fancybox Min Js ===-->
+<script src="front/js/fancybox.min.js"></script>
+<!--=== jQuery Waypoint Js ===-->
+<script src="front/js/waypoint.js"></script>
+<!--=== jQuery Parallax Min Js ===-->
+<script src="front/js/parallax.min.js"></script>
+<!--=== jQuery Aos Min Js ===-->
+<script src="front/js/aos.min.js"></script>
+
+<!--=== jQuery Custom Js ===-->
+<script src="front/js/custom.js"></script>
+
+
+<script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
+<script>//<![CDATA[
+if (address_2 = localStorage.getItem('address_2_saved')) {
+  $('select[name="calc_shipping_district"] option').each(function() {
+    if ($(this).text() == address_2) {
+      $(this).attr('selected', '')
+    }
+  })
+  $('input.billing_address_2').attr('value', address_2)
+}
+if (district = localStorage.getItem('district')) {
+  $('select[name="calc_shipping_district"]').html(district)
+  $('select[name="calc_shipping_district"]').on('change', function() {
+    var target = $(this).children('option:selected')
+    target.attr('selected', '')
+    $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+    address_2 = target.text()
+    $('input.billing_address_2').attr('value', address_2)
+    district = $('select[name="calc_shipping_district"]').html()
+    localStorage.setItem('district', district)
+    localStorage.setItem('address_2_saved', address_2)
+  })
+}
+$('select[name="calc_shipping_provinces"]').each(function() {
+  var $this = $(this),
+    stc = ''
+  c.forEach(function(i, e) {
+    e += +1
+    stc += '<option value=' + e + '>' + i + '</option>'
+    $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+    if (address_1 = localStorage.getItem('address_1_saved')) {
+      $('select[name="calc_shipping_provinces"] option').each(function() {
+        if ($(this).text() == address_1) {
+          $(this).attr('selected', '')
+        }
+      })
+      $('input.billing_address_1').attr('value', address_1)
+    }
+    $this.on('change', function(i) {
+      i = $this.children('option:selected').index() - 1
+      var str = '',
+        r = $this.val()
+      if (r != '') {
+        arr[i].forEach(function(el) {
+          str += '<option value="' + el + '">' + el + '</option>'
+          $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+        })
+        var address_1 = $this.children('option:selected').text()
+        var district = $('select[name="calc_shipping_district"]').html()
+        localStorage.setItem('address_1_saved', address_1)
+        localStorage.setItem('district', district)
+        $('select[name="calc_shipping_district"]').on('change', function() {
+          var target = $(this).children('option:selected')
+          target.attr('selected', '')
+          $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+          var address_2 = target.text()
+          $('input.billing_address_2').attr('value', address_2)
+          district = $('select[name="calc_shipping_district"]').html()
+          localStorage.setItem('district', district)
+          localStorage.setItem('address_2_saved', address_2)
+        })
+      } else {
+        $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
+        district = $('select[name="calc_shipping_district"]').html()
+        localStorage.setItem('district', district)
+        localStorage.removeItem('address_1_saved', address_1)
+      }
+    })
+  })
+})
+//]]></script>
+
 </body>
-
-
-<!-- Mirrored from technext.github.io/karma/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Nov 2022 04:42:20 GMT -->
 
 </html>

@@ -24,7 +24,7 @@ return new class extends Migration
       $table->integer('qty');
       $table->double('discount')->nullable();
       $table->string('sku')->nullable();
-      $table->boolean('status');
+      $table->boolean('status')->nullable();
       $table->string('tag')->nullable();
 
       $table->timestamps();

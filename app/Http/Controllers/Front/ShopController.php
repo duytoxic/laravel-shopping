@@ -14,6 +14,7 @@ class ShopController extends Controller
   {
     // get categories
     $categories = ProductCategory::all();
+    $countCategories = ProductCategory::withCount('products')->get();
 
     // get products
     $perPage = $request->show ?? 9;
@@ -50,7 +51,7 @@ class ShopController extends Controller
 
     $products->appends(['sort_by' => $sortBy, 'show' => $perPage]);
 
-    return view('front.shop.index', compact('products', 'categories'));
+    return view('front.shop.index', compact('products', 'categories', 'countCategories'));
   }
 
 
@@ -81,11 +82,12 @@ class ShopController extends Controller
   {
     // get categories
     $categories = ProductCategory::all();
+    $countCategories = ProductCategory::withCount('products')->get();
 
     // get products
     $products = ProductCategory::where('name', $categoryName)->first()->products->toQuery()->paginate();
 
-    return view('front.shop.index', compact('products', 'categories'));
+    return view('front.shop.index', compact('products', 'categories', 'countCategories'));
   }
 
   public function sortAndPagination()

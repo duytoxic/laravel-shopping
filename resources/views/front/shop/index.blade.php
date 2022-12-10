@@ -20,103 +20,171 @@
 		</div>
 	</section>
 	<!-- End Banner Area -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-3 col-lg-4 col-md-5">
-				<div class="sidebar-categories">
-					<div class="head">Danh mục sản phẩm</div>
-					<ul class="main-categories">
-            @foreach ($categories as $category)
-              <li class="main-nav-list">
-                <a href="shop/{{$category->name}}">
-                  {{$category->name}}<span class="number">(29)</span>
-                </a>
-              </li>
-            @endforeach
-					</ul>
-				</div>
-				<div class="sidebar-filter mt-50">
-					<div class="top-filter-head">Bộ lọc sản phẩm</div>
 
-					<div class="common-filter">
-						<div class="head">Color</div>
-						<form action="#">
-							<ul>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
-										Leather<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
-										with red<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
-							</ul>
-						</form>
-					</div>
-					<div class="common-filter">
-						<div class="head">Price</div>
-						<div class="price-range-area">
-							<div id="price-range"></div>
-							<div class="value-wrapper d-flex">
-								<div class="price">Price:</div>
-								<span>$</span>
-								<div id="lower-value"></div>
-								<div class="to">to</div>
-								<span>$</span>
-								<div id="upper-value"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-9 col-lg-8 col-md-7">
-				<!-- Start Filter Bar -->
-				<div class="d-flex justify-content-between align-items-center">
-					<form action="" class="filter-bar d-flex flex-wrap align-items-center">
-						<div class="sorting">
-							<select name="sort_by" onchange="this.form.submit();">
-								<option {{ request('sort_by') == 'latest' ? 'selected' : '' }} value="latest">Mới nhất</option>
-								<option {{ request('sort_by') == 'oldest' ? 'selected' : '' }} value="oldest">Cũ nhất</option>
-								<option {{ request('sort_by') == 'name-ascending' ? 'selected' : '' }} value="name-ascending">Tên: A-Z</option>
-								<option {{ request('sort_by') == 'name-descending' ? 'selected' : '' }} value="name-descending">Tên: Z-A</option>
-								<option {{ request('sort_by') == 'price-ascending' ? 'selected' : '' }} value="price-ascending">Giá: tăng</option>
-								<option {{ request('sort_by') == 'price-descending' ? 'selected' : '' }} value="price-descending">Giá: giảm</option>
-							</select>
-						</div>
-						<div class="sorting mr-auto">
-							<select name="show" onchange="this.form.submit();">
-								<option {{ request('show') == '3' ? 'selected' : '' }} value="3">Hiển thị 3</option>
-								<option {{ request('show') == '6' ? 'selected' : '' }} value="6">Hiển thị 6</option>
-								<option {{ request('show') == '9' ? 'selected' : '' }} value="9">Hiển thị 9</option>
-								<option {{ request('show') == '12' ? 'selected' : '' }} value="12">Hiển thị 12</option>
-							</select>
-						</div>
-					</form>
-          <form class="product-search" action="shop">
-            <div class="input-group">
-              <input type="text" name="search" placeholder="Tìm kiếm" value="{{ request('search') }}">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form>
-				</div>
-				<!-- End Filter Bar -->
-				<!-- Start Best Seller -->
-				<section class="lattest-product-area pb-40 category-list">
-					<div class="row">
-            @foreach ($products as $product)
-              <div class="col-lg-4 col-md-6">
-                @include('front.components.product-item')
+  <main class="main-content">
+    <!--== Start Product Area Wrapper ==-->
+    <section class="product-area product-default-area">
+      <div class="container">
+        <div class="row flex-xl-row-reverse justify-content-between">
+          <div class="col-xl-9">
+            <div class="row">
+              <div class="col-12">
+                <div class="shop-top-bar">
+                  <div class="shop-top-left">
+                    <p class="pagination-line"><a href="#">9</a> Sản phẩm trên  <a href="#">{{count($products)}}</a></p>
+                  </div>
+                  <div class="shop-top-center">
+                    <nav class="product-nav">
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-grid-tab" data-bs-toggle="tab" data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid" aria-selected="true"><i class="fa fa-th"></i></button>
+                        <button class="nav-link" id="nav-list-tab" data-bs-toggle="tab" data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list" aria-selected="false"><i class="fa fa-list"></i></button>
+                      </div>
+                    </nav>
+                  </div>
+                  <div class="shop-top-right">
+                    <form action=""">
+                      <div class="sorting d-flex align-items-center">
+                        <span>Sắp xếp :</span>
+                        <select class="form-select" name="sort_by" onchange="this.form.submit();">
+                          <option {{ request('sort_by') == 'latest' ? 'selected' : '' }} value="latest">Mới nhất</option>
+                          <option {{ request('sort_by') == 'oldest' ? 'selected' : '' }} value="oldest">Cũ nhất</option>
+                          <option {{ request('sort_by') == 'name-ascending' ? 'selected' : '' }} value="name-ascending">Tên: A-Z</option>
+                          <option {{ request('sort_by') == 'name-descending' ? 'selected' : '' }} value="name-descending">Tên: Z-A</option>
+                          <option {{ request('sort_by') == 'price-ascending' ? 'selected' : '' }} value="price-ascending">Giá: tăng</option>
+                          <option {{ request('sort_by') == 'price-descending' ? 'selected' : '' }} value="price-descending">Giá: giảm</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-            @endforeach
-					</div>
-				</section>
-				<!-- End Best Seller -->
-				<!-- Start Filter Bar -->
-				<div class="filter-bar d-flex align-items-center">
-          {{$products->links()}}
-				</div>
-				<!-- End Filter Bar -->
-			</div>
-		</div>
-	</div>
+              <div class="col-12">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                    <div class="row">
+                      @foreach ($products as $product)
+                        <div class="col-sm-6 col-lg-4">
+                          @include('front.components.product-item')
+                        </div>
+                      @endforeach
+
+                      <div class="col-12">
+                        <div class="pagination-items">
+                          {{$products->links()}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+                    <div class="row">
+                      @foreach ($products as $product)
+                      <div class="col-md-12">
+                        <!--== Start Product Item ==-->
+                        <div class="product-item product-list-item">
+                          <div class="inner-content">
+                            <div class="product-thumb">
+                              <a href="single-product.html">
+                                <img src="front/img/shop/{{$product->productImages[0]->path}}" width="322" height="360" alt="Image-HasTech">
+                              </a>
+                              @if ($product->discount != null)
+                              <div class="product-flag">
+                                <ul>
+                                  <li class="discount">Giảm giá</li>
+                                </ul>
+                              </div>
+                              @endif
+                              <div class="product-action">
+                                <a class="btn-product-cart" href="./cart/add/{{$product->id}}"><i class="fa fa-shopping-cart"></i></a>
+                                <a class="btn-product-compare" href="/shop/product/{{$product->id}}"><i class="fa fa-eye"></i></a>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <div class="category">
+                                <ul>
+                                  <li><a href="shop.html">Men</a></li>
+                                  <li class="sep">/</li>
+                                  <li><a href="shop.html">Women</a></li>
+                                </ul>
+                              </div>
+                              <h4 class="title"><a href="/shop/product/{{$product->id}}">{{$product->name}}</a></h4>
+                              <div class="prices">
+                                @if ($product->discount != null)
+                                  <span class="price-old">{{$product->price}}đ</span>
+                                  <span class="sep">-</span>
+                                  <span class="price">{{$product->discount}}đ</span>
+                                @else
+                                  <span class="price">{{$product->price}}đ</span>
+                                @endif
+                              </div>
+                              <p>{{$product->description}}</p>
+                              <a class="btn-theme btn-sm" href="./cart/add/{{$product->id}}">Thêm vào giỏ hàng</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    @endforeach
+
+
+                      </div>
+                      <div class="col-12">
+                        <div class="pagination-items">
+                          {{$products->links()}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-xl-3">
+            <div class="shop-sidebar">
+              <div class="shop-sidebar-category">
+                <h4 class="sidebar-title">Danh mục sản phẩm</h4>
+                <div class="sidebar-category">
+                  <ul class="category-list mb--0">
+                    @foreach ($categories as $key => $category)
+                    <li>
+                      <a href="shop/{{$category->name}}">
+                        {{$category->name}}<span>({{$countCategories[$key]->products_count}})</span>
+                      </a>
+                    </li>
+                  @endforeach
+                  </ul>
+                </div>
+              </div>
+
+              <div class="shop-sidebar-size">
+                <h4 class="sidebar-title">Size</h4>
+                <div class="sidebar-size">
+                  <ul class="size-list">
+                    <li><a href="shop.html">S <span>(6)</span></a></li>
+                    <li><a href="shop.html">M <span>(4)</span></a></li>
+                    <li><a href="shop.html">L <span>(2)</span></a></li>
+                    <li><a href="shop.html">XL <span>(6)</span></a></li>
+                    <li><a href="shop.html">XXL <span>(12)</span></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="shop-sidebar-brand">
+                <h4 class="sidebar-title">Chi nhánh</h4>
+                <div class="sidebar-brand">
+                  <ul class="brand-list mb--0">
+                    <li><a href="shop.html">Lakmeetao <span>(6)</span></a></li>
+                    <li><a href="shop.html">Beautifill <span>(4)</span></a></li>
+                    <li><a href="shop.html">Made In GD <span>(2)</span></a></li>
+                    <li><a href="shop.html">Pecifico <span>(6)</span></a></li>
+                    <li><a href="shop.html">Xlovgtir <span>(12)</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Product Area Wrapper ==-->
+  </main>
+
 
 @endsection

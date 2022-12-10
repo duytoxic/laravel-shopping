@@ -18,11 +18,14 @@ return new class extends Migration
 
       $table->string('first_name');
       $table->string('last_name');
-      $table->string('country');
+      $table->string('calc_shipping_provinces');
+      $table->string('calc_shipping_district');
       $table->string('street_address');
-      $table->string('postcode_zip');
+      $table->string('postcode_zip')->nullable();
       $table->string('email');
       $table->string('phone');
+      $table->string('payment_type');
+      $table->text('note')->nullable();
 
       $table->timestamps();
     });

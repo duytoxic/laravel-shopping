@@ -19,6 +19,8 @@ class CartController extends Controller
       'qty' => 1,
       'price' => $product->discount ?? $product->price,
       'weight' => 0,
+      // 'color' => '',
+      // 'size' => '',
       'options' => [
         'images' => $product->productImages,
       ],
