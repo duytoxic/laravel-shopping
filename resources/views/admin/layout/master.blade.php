@@ -57,49 +57,11 @@
       </div>
       <div class="app-header__content">
         <div class="app-header-left">
-          <div class="search-wrapper">
-            <div class="input-holder">
-              <input type="text" class="search-input" placeholder="Type to search">
-              <button class="search-icon"><span></span></button>
-            </div>
-            <button class="close"></button>
-          </div>
+
 
         </div>
         <div class="app-header-right">
-          <div class="header-dots">
-            <div class="dropdown">
-              <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"
-                class="p-0 mr-2 btn btn-link">
-                <span class="icon-wrapper icon-wrapper-alt rounded-circle">
-                  <span class="icon-wrapper-bg bg-primary"></span>
-                  <i class="icon text-primary ion-android-apps"></i>
-                </span>
-              </button>
-              <div tabindex="-1" role="menu" aria-hidden="true"
-                class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
-                <div class="dropdown-menu-header">
-                  <div class="dropdown-menu-header-inner bg-plum-plate">
-                    <div class="menu-header-image"
-                      style="background-image: url('assets/images/dropdown-header/abstract4.jpg');">
-                    </div>
-                    <div class="menu-header-content text-white">
-                      <h5 class="menu-header-title">Grid Dashboard</h5>
-                      <h6 class="menu-header-subtitle">Easy grid navigation inside dropdowns</h6>
-                    </div>
-                  </div>
-                </div>
 
-                <ul class="nav flex-column">
-                  <li class="nav-item-divider nav-item"></li>
-                  <li class="nav-item-btn text-center nav-item">
-                    <button class="btn-shadow btn btn-primary btn-sm">Follow-ups</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
 
           <div class="header-btn-lg pr-0">
             <div class="widget-content p-0">

@@ -53,7 +53,6 @@
                     <ul>
                       <li class="number"><i class="fa fa-phone"></i><a href="tel://0123456789">+00 123 456 789</a></li>
                       <li class="email"><i class="fa fa-envelope"></i><a href="mailto://demo@example.com">demo@example.com</a></li>
-                      <li class="account"><i class="fa fa-user"></i><a href="account-login.html">Account</a></li>
                     </ul>
                   </div>
                 </div>
@@ -336,20 +335,6 @@
     <!--== End Footer Main ==-->
 
     <!--== Start Footer Bottom ==-->
-    <div class="footer-bottom">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-md-7 col-lg-6">
-            <p class="copyright">© 2021 Shome. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival/portfolio">Codecarnival.</a></p>
-          </div>
-          <div class="col-md-5 col-lg-6">
-            <div class="payment">
-              <a href="account-login.html"><img src="assets/img/photos/payment-card.webp" width="192" height="21" alt="Payment Logo"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!--== End Footer Bottom ==-->
   </footer>
 
