@@ -87,7 +87,7 @@
                   </div>
                 </td>
                 <td class="text-center text-muted">{{$product->productCategory->name}}</td>
-                <td class="text-center text-muted">{{$product->price}}</td>
+                <td class="text-center text-muted">{{number_format($product->price, 0, '', ',')}}đ</td>
                 <td class="text-center text-muted">
                   @if ($product->status == 1)
                     <button class="btn btn-sm btn-success">Hiện</button>

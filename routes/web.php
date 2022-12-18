@@ -63,6 +63,7 @@ Route::prefix('/admin')->group(function(){
     Route::get('/create', [admin\ProductController::class, 'create']);
     Route::post('/create', [admin\ProductController::class, 'store']);
     Route::get('/{id}/edit', [admin\ProductController::class, 'edit']);
+    Route::post('/{id}/edit', [admin\ProductController::class, 'update']);
   });
 
   Route::prefix('/order')->group(function(){

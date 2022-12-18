@@ -21,7 +21,7 @@ class ProductController extends Controller
       $search = $request->search ?? '';
 
       $products = Product::where('name', 'like', '%' . $search . '%');
-      $products = $products->paginate(5);
+      $products = $products->paginate(10);
 
       return view('admin.product.index', compact('products'));
     }
@@ -68,9 +68,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+      $product = Product::findOrFail($id);
+      return view('admin.product.edit', compact('product'));
     }
 
     /**
@@ -80,9 +81,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+      $user = Product::where('id', '=', $id)->first();
+      $data = $request->all();
+      $user->update($data);
+      return redirect('admin/product');
     }
 
     /**
