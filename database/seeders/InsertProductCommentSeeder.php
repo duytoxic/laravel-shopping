@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class InsertOrderSeeder extends Seeder
+class InsertProductCommentSeeder extends Seeder
 {
   /**
    * Seed the application's database.
@@ -16,7 +16,7 @@ class InsertOrderSeeder extends Seeder
    */
   public function run()
   {
-    $path = base_path() . '/db/orders.sql';
+    $path = base_path() . '/db/product_comment.sql';
     $sql = file_get_contents($path);
     DB::unprepared($sql);
   }
