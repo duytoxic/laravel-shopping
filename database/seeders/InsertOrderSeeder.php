@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class InsertBlogSeeder extends Seeder
+class InsertProductSeeder extends Seeder
 {
   /**
    * Seed the application's database.
@@ -16,7 +16,7 @@ class InsertBlogSeeder extends Seeder
    */
   public function run()
   {
-    $path = base_path() . '/db/blogs.sql';
+    $path = base_path() . '/db/products.sql';
     $sql = file_get_contents($path);
     DB::unprepared($sql);
   }
