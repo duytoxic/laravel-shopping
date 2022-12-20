@@ -16,6 +16,8 @@ return new class extends Migration
     Schema::create('orders', function (Blueprint $table) {
       $table->id();
 
+      $table->integer('user_id')->nullable();
+
       $table->string('first_name');
       $table->string('last_name');
       $table->string('calc_shipping_provinces');
@@ -26,6 +28,8 @@ return new class extends Migration
       $table->string('phone');
       $table->string('payment_type');
       $table->text('note')->nullable();
+
+      $table->integer('status');
 
       $table->timestamps();
     });

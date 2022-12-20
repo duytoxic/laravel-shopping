@@ -193,7 +193,7 @@
                         >Tên
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <input id="l_name" name="last_name" type="text" class="form-control" />
+                      <input id="l_name" name="last_name" type="text" class="form-control" value="{{ Auth::user()->name ?? '' }}"" />
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -234,6 +234,7 @@
                         name="street_address"
                         class="form-control"
                         placeholder="Số nhà, tên đường,..."
+                        value="{{ Auth::user()->address ?? '' }}"
                       />
                     </div>
 
@@ -248,7 +249,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="phone">Điện thoại <abbr class="required" title="required">*</abbr></label>
-                      <input id="phone" type="text" name="phone" class="form-control" />
+                      <input id="phone" type="text" name="phone" class="form-control" value="{{ Auth::user()->phone ?? '' }}" />
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -257,7 +258,7 @@
                         >Email
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <input id="email" type="text" name="email" class="form-control" />
+                      <input id="email" type="text" name="email" class="form-control" value="{{ Auth::user()->email ?? '' }}" />
                     </div>
                   </div>
                   <div id="CheckoutBillingAccordion" class="col-md-12">

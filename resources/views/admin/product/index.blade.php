@@ -81,7 +81,11 @@
                   <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                       <div class="widget-content-left flex2">
-                        <div class="widget-heading">{{$product->name}}</div>
+                        <div class="widget-heading">
+                          <a href="/admin/product/{{$product->id}}" class="widget-heading">
+                          {{$product->name}}
+                        </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -114,7 +118,7 @@
                       data-toggle="tooltip"
                       title="Delete"
                       data-placement="bottom"
-                      onclick="confirm('Bạn có chắc muốn xóa người dùng này') === true ? window.location='./admin/product/delete/{{$product->id}}' : ''"
+                      onclick="confirm('Bạn có chắc muốn xóa sản phẩm này') === true ? window.location='./admin/product/delete/{{$product->id}}' : ''"
                     >
                       <span class="btn-icon-wrapper opacity-8">
                         <i class="fa fa-trash fa-w-20"></i>

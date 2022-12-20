@@ -241,11 +241,6 @@
                       <i class="metismenu-icon"></i>Danh mục sản phẩm
                     </a>
                   </li>
-                  <li>
-                    <a href="./admin/blog" class="{{ (request()->segment(1) == 'admin/brand') ? 'mm-active' : '' }}">
-                      <i class="metismenu-icon"></i>Bài viết
-                    </a>
-                  </li>
                 </ul>
               </li>
             </ul>

@@ -4,26 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductImageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($product_id)
     {
-      $products = Product::all();
-
-      $search = $request->search ?? '';
-
-      $products = Product::where('name', 'like', '%' . $search . '%');
-      $products = $products->paginate(10);
-
-      return view('admin.product.index', compact('products'));
+      $product = Product::find($product_id);
+      $productImages = $product->productImages;
+      return view('admin.product.image.index', compact('product', 'productImages'));
     }
 
     /**
@@ -33,8 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-      $categories = ProductCategory::all();
-      return view('admin.product.create', compact('categories'));
+        //
     }
 
     /**
@@ -45,62 +38,51 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-      $data = $request->all();
-      $data['qty'] = 0;
-      Product::create($data);
-      return redirect('admin/product');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-      $product = Product::find($id);
-
-      return view('admin.product.show', compact('product'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-      $product = Product::findOrFail($id);
-      return view('admin.product.edit', compact('product'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-      $user = Product::where('id', '=', $id)->first();
-      $data = $request->all();
-      $user->update($data);
-      return redirect('admin/product');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-      Product::destroy($id);
-
-      return back();
+        //
     }
 }

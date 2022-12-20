@@ -24,7 +24,9 @@ class CheckoutController extends Controller
   {
     if ($request->payment_type == 'pay_later') {
       // add order
-      $order = Order::create($request->all());
+      $data = $request->all();
+      $data['status'] = 1;
+      $order = Order::create($data);
 
       // add order detail
       $carts = Cart::content();

@@ -40,6 +40,17 @@ Route::prefix('/checkout')->group(function(){
   Route::get('/result', [front\CheckoutController::class, 'result']);
 });
 
+Route::prefix('/account')->group(function(){
+  Route::get('/login', [front\AccountController::class, 'login']);
+  Route::post('/login', [front\AccountController::class, 'checkLogin']);
+  Route::get('/logout', [front\AccountController::class, 'logout']);
+  Route::get('/register', [front\AccountController::class, 'register']);
+  Route::post('/register', [front\AccountController::class, 'postRegister']);
+  Route::prefix('/detail')->group(function(){
+    Route::get('/', [front\AccountController::class, 'dashboard']);
+  });
+});
+
 //Admin
 Route::prefix('/admin')->group(function(){
   Route::prefix('/user')->group(function(){
@@ -64,6 +75,10 @@ Route::prefix('/admin')->group(function(){
     Route::post('/create', [admin\ProductController::class, 'store']);
     Route::get('/{id}/edit', [admin\ProductController::class, 'edit']);
     Route::post('/{id}/edit', [admin\ProductController::class, 'update']);
+    Route::get('/delete/{id}', [admin\ProductController::class, 'destroy']);
+
+    Route::get('/{product_id}', [admin\ProductController::class, 'show']);
+    Route::get('/{product_id}/image', [admin\ProductImageController::class, 'index']);
   });
 
   Route::prefix('/order')->group(function(){
@@ -72,4 +87,8 @@ Route::prefix('/admin')->group(function(){
     Route::post('/{id}/edit', [admin\OrderController::class, 'update']);
     Route::get('/delete/{id}', [admin\OrderController::class, 'destroy']);
   });
+
+  Route::get('/login', [admin\DashboardController::class, 'login']);
+  Route::post('/login', [admin\DashboardController::class, 'checkLogin']);
+  Route::get('/dashboard', [admin\DashboardController::class, 'dashboard']);
 });
