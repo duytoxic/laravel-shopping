@@ -74,7 +74,7 @@
             <div class="header-middle-align">
               <div class="header-middle-align-start">
                 <div class="header-logo-area">
-                  <a href="index.html">
+                  <a href="/">
                     <img class="logo-main" src="front/img/logo.webp" width="131" height="34" alt="Logo" />
                     <img class="logo-light" src="front/img/logo-light.webp" width="131" height="34" alt="Logo" />
                   </a>

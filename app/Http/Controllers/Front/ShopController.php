@@ -22,6 +22,7 @@ class ShopController extends Controller
     $search = $request->search ?? '';
 
     $products = Product::where('name', 'like', '%' . $search . '%');
+    // dd($products);
 
     switch ($sortBy) {
       case 'latest':
@@ -49,7 +50,7 @@ class ShopController extends Controller
 
     $products = Product::paginate($perPage);
 
-    $products->appends(['sort_by' => $sortBy, 'show' => $perPage]);
+    // $products->appends(['sort_by' => $sortBy, 'show' => $perPage]);
 
     return view('front.shop.index', compact('products', 'categories', 'countCategories'));
   }
