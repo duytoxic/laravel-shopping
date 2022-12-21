@@ -88,9 +88,9 @@
               >
               <div class="col-md-9 col-xl-8">
                 @if ($user->avatar != null)
-                  <img src="./front/img/user/{{$user->avatar}}" alt="avatar" class="img-avatar">
+                  <img src="/dashboard/assets/images/avatars/{{$user->avatar}}" alt="avatar" class="img-avatar">
                 @else
-                  <img src="./front/img/default-img.png" alt="avatar" class="img-avatar">
+                  <img src="/img/default-img.png" alt="avatar" class="img-avatar">
                 @endif
               </div>
             </div>
