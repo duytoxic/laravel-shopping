@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 10:23 AM
+-- Generation Time: Dec 21, 2022 at 05:02 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -43,7 +43,11 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `qty`, `amount`, `total`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 495, 495, '2022-12-19 18:31:04', '2022-12-19 18:31:04');
+(1, 1, 1, 1, 495, 495, '2022-12-19 18:31:04', '2022-12-19 18:31:04'),
+(2, 2, 2, 1, 13, 13, '2022-12-21 02:32:31', '2022-12-21 02:32:31'),
+(3, 2, 8, 1, 35, 35, '2022-12-21 02:32:31', '2022-12-21 02:32:31'),
+(4, 2, 3, 1, 34, 34, '2022-12-21 02:32:31', '2022-12-21 02:32:31'),
+(5, 3, 1, 1, 550000, 550000, '2022-12-21 03:59:52', '2022-12-21 03:59:52');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +67,7 @@ ALTER TABLE `order_details`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

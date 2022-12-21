@@ -90,34 +90,12 @@
 
       </div>
       <div class="col-md-6 col-lg-4">
-        <div class="shipping-form-coupon">
-          <div class="section-title-cart">
-            <h5 class="title">Mã giảm giá</h5>
-            <div class="desc">
-              <p>Enter your coupon code if you have one.</p>
-            </div>
-          </div>
-          <form action="#" method="post">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="couponCode" class="visually-hidden">Coupon Code</label>
-                  <input type="text" id="couponCode" class="form-control" placeholder="Enter your coupon code..">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <button type="submit" class="coupon-btn">Apply coupon</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
+
       </div>
       <div class="col-md-12 col-lg-4">
         <div class="shipping-form-cart-totals">
           <div class="section-title-cart">
-            <h5 class="title">Cart totals</h5>
+            <h5 class="title">Giỏ hàng</h5>
           </div>
           <div class="cart-total-table">
             <table class="table">
@@ -141,7 +119,7 @@
               </tbody>
             </table>
           </div>
-          <a class="btn-theme btn-flat" href="./checkout">Proceed to checkout</a>
+          <a class="btn-theme btn-flat" href="./checkout">Thanh toán</a>
         </div>
       </div>
     </div>

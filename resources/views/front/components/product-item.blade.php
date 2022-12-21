@@ -12,9 +12,7 @@
     <div class="product-info">
       <div class="category">
         <ul>
-          <li><a href="shop.html">Men</a></li>
-          <li class="sep">/</li>
-          <li><a href="shop.html">Women</a></li>
+          <li><a href="shop.html">{{$product->productCategory->name}}</a></li>
         </ul>
       </div>
       <h4 class="title"><a href="/shop/product/{{$product->id}}">{{$product->name}}</a></h4>

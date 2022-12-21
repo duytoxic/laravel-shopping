@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 10:23 AM
+-- Generation Time: Dec 21, 2022 at 05:03 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,8 +44,9 @@ CREATE TABLE `product_comments` (
 --
 
 INSERT INTO `product_comments` (`id`, `product_id`, `user_id`, `email`, `name`, `messages`, `rating`, `created_at`, `updated_at`) VALUES
-(1, 1, 4, 'BrandonKelley@gmail.com', 'Brandon Kelley', 'Nice !', 4, NULL, NULL),
-(2, 1, 5, 'RoyBanks@gmail.com', 'Roy Banks', 'Nice !', 4, NULL, NULL);
+(1, 1, 4, 'BrandonKelley@gmail.com', 'Quốc Khánh', 'Sản phẩm tuyệt vời', 4, NULL, NULL),
+(2, 1, 5, 'RoyBanks@gmail.com', 'Lâm Bảo', 'Tôi muốn biết thêm thông tin về sản phẩm thì xem như thể nào ạ', 4, NULL, NULL),
+(5, 1, 3, 'duy2kruoiw@gmail.com', 'Manh', 'Hello', 5, '2022-12-21 03:33:41', '2022-12-21 03:33:41');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +66,7 @@ ALTER TABLE `product_comments`
 -- AUTO_INCREMENT for table `product_comments`
 --
 ALTER TABLE `product_comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -38,6 +38,7 @@ Route::prefix('/checkout')->group(function(){
   Route::get('/', [front\CheckoutController::class, 'index']);
   Route::post('/', [front\CheckoutController::class, 'addOrder']);
   Route::get('/result', [front\CheckoutController::class, 'result']);
+  Route::get('/failed', [front\CheckoutController::class, 'failed']);
 });
 
 Route::prefix('/account')->group(function(){

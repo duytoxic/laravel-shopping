@@ -9,12 +9,12 @@
     <div class="row">
       <div class="col-12">
         <div class="page-header-content">
-          <h2 class="title" data-aos="fade-down" data-aos-duration="1000">Product Details</h2>
+          <h2 class="title" data-aos="fade-down" data-aos-duration="1000">Chi tiết sản phẩm</h2>
           <nav class="breadcrumb-area" data-aos="fade-down" data-aos-duration="1200">
             <ul class="breadcrumb">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html">Trang chủ</a></li>
               <li class="breadcrumb-sep">//</li>
-              <li>Product Details</li>
+              <li>Chi tiết sản phẩm</li>
             </ul>
           </nav>
         </div>
@@ -76,16 +76,7 @@
                   </div>
                 </div>
                 <p>{{$product->description}}</p>
-                <div class="product-color">
-                  <h6 class="title">Color</h6>
-                  <ul class="color-list">
-                    <li  data-bg-color="#586882"></li>
-                    <li class="active" data-bg-color="#505050"></li>
-                    <li data-bg-color="#73707a"></li>
-                    <li data-bg-color="#c7bb9b"></li>
-                  </ul>
-                </div>
-                <div class="product-size">
+                {{-- <div class="product-size">
                   <h6 class="title">Size</h6>
                   <ul class="size-list">
                     <li>S</li>
@@ -93,14 +84,14 @@
                     <li>L</li>
                     <li>XL</li>
                   </ul>
-                </div>
+                </div> --}}
                 <div class="product-quick-action">
                   <div class="qty-wrap">
                     <div class="pro-qty">
-                      <input type="text" title="Quantity" value="1">
+                      <input type="text" title="Quantity" value="1" name="qty">
                     </div>
                   </div>
-                  <a class="btn-theme" href="./cart/add/{{$product->id}}">Add to Cart</a>
+                  <a class="btn-theme" href="./cart/add/{{$product->id}}">Thêm vào giỏ hàng</a>
                 </div>
                 <div class="product-info-footer mt-2">
                   <h6 class="code"><span>Code :</span>Ch-256xl</h6>
@@ -148,49 +139,35 @@
 
                 <!--== Start Reviews Form Item ==-->
                 <div class="reviews-form-area">
-                  <h4 class="title">Write a review</h4>
+                  <h4 class="title">Viết bình luận</h4>
                   <div class="reviews-form-content">
-                    <form action="#">
+                    <form action="" method="POST">
+                      <input type="hidden" name="product_id" value="{{$product->id}}">
+                      <input type="hidden" name="user_id"  value="{{Auth::user()->id ?? 2}}">
+                      @csrf
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <label for="for_name">Name</label>
-                            <input id="for_name" class="form-control" type="text" placeholder="Enter your name">
+                            <label for="for_name">Tên</label>
+                            <input id="for_name" class="form-control" name="name" type="text" placeholder="Tên">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
                             <label for="for_email">Email</label>
-                            <input id="for_email" class="form-control" type="email" placeholder="john.smith@example.com">
+                            <input id="for_email" class="form-control" name="email" type="email" placeholder="Email">
                           </div>
                         </div>
+
                         <div class="col-md-12">
                           <div class="form-group">
-                            <span class="title">Rating</span>
-                            <ul class="review-rating">
-                              <li class="fa fa-star-o"></li>
-                              <li class="fa fa-star-o"></li>
-                              <li class="fa fa-star-o"></li>
-                              <li class="fa fa-star-o"></li>
-                              <li class="fa fa-star-o"></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label for="for_review-title">Review Title</label>
-                            <input id="for_review-title" class="form-control" type="text" placeholder="Give your review a title">
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label for="for_comment">Body of Review (1500)</label>
-                            <textarea id="for_comment" class="form-control" placeholder="Write your comments here"></textarea>
+                            <label for="for_comment">Nội dung (1500)</label>
+                            <textarea id="for_comment" class="form-control" name="messages" placeholder="Nội dung"></textarea>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-submit-btn">
-                            <button type="submit" class="btn-submit">Post comment</button>
+                            <button type="submit" class="btn-submit">Gửi</button>
                           </div>
                         </div>
                       </div>

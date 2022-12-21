@@ -16,7 +16,7 @@ class InsertOrderDetailSeeder extends Seeder
    */
   public function run()
   {
-    $path = base_path() . '/db/order_detail.sql';
+    $path = base_path() . '/db/order_details.sql';
     $sql = file_get_contents($path);
     DB::unprepared($sql);
   }

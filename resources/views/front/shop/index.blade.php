@@ -5,7 +5,7 @@
 @section('body')
 
  <!--== Start Page Header Area Wrapper ==-->
- <div class="page-header-area" data-bg-img="/front/assets/img/photos/bg3.webp">
+ <div class="page-header-area" data-bg-img="/front/img/photos/bg3.webp">
   <div class="container pt--0 pb--0">
     <div class="row">
       <div class="col-12">
@@ -35,7 +35,7 @@
               <div class="col-12">
                 <div class="shop-top-bar">
                   <div class="shop-top-left">
-                    <p class="pagination-line"><a href="#">9</a> Sản phẩm trên  <a href="#">{{count($products)}}</a></p>
+                    <p class="pagination-line"> <a href="#">{{count($products)}}</a> Sản phẩm</p>
                   </div>
                   <div class="shop-top-center">
                     <nav class="product-nav">
@@ -161,24 +161,11 @@
                 <h4 class="sidebar-title">Size</h4>
                 <div class="sidebar-size">
                   <ul class="size-list">
-                    <li><a href="shop.html">S <span>(6)</span></a></li>
-                    <li><a href="shop.html">M <span>(4)</span></a></li>
-                    <li><a href="shop.html">L <span>(2)</span></a></li>
-                    <li><a href="shop.html">XL <span>(6)</span></a></li>
-                    <li><a href="shop.html">XXL <span>(12)</span></a></li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="shop-sidebar-brand">
-                <h4 class="sidebar-title">Chi nhánh</h4>
-                <div class="sidebar-brand">
-                  <ul class="brand-list mb--0">
-                    <li><a href="shop.html">Lakmeetao <span>(6)</span></a></li>
-                    <li><a href="shop.html">Beautifill <span>(4)</span></a></li>
-                    <li><a href="shop.html">Made In GD <span>(2)</span></a></li>
-                    <li><a href="shop.html">Pecifico <span>(6)</span></a></li>
-                    <li><a href="shop.html">Xlovgtir <span>(12)</span></a></li>
+                    <li><a href="/shop">S <span>(6)</span></a></li>
+                    <li><a href="/shop">M <span>(4)</span></a></li>
+                    <li><a href="/shop">L <span>(2)</span></a></li>
+                    <li><a href="/shop">XL <span>(6)</span></a></li>
+                    <li><a href="/shop">XXL <span>(12)</span></a></li>
                   </ul>
                 </div>
               </div>

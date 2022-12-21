@@ -72,7 +72,7 @@
                             <td>{{ $order->created_at }}</td>
                             <td>
                               @if ($order->status == 1)
-                                <button class="btn btn-sm btn-warning">Chưa xác nhận</button>
+                                <button class="btn btn-sm btn-success">Hoàn thành</button>
                               @else
                                 <button class="btn btn-sbtn-warning">Hoàn thành</button>
                               @endif

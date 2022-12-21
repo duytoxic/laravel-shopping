@@ -73,7 +73,9 @@ class ShopController extends Controller
 
   public function postComment(Request $request)
   {
-    ProductComment::create($request->all());
+    $data = $request->all();
+    $data['rating'] = 5;
+    ProductComment::create($data);
 
     return redirect()->back();
   }

@@ -52,7 +52,7 @@ class CheckoutController extends Controller
       //return result
       return redirect('checkout/result')->with('notification', 'Đăng ký mua hàng thành công!');
     } else{
-      return 'Chưa hỗ trợ hình thức thanh toán online';
+      return redirect('checkout/failed')->with('notification', 'Đăng ký mua hàng thành công!');
     }
   }
 
@@ -60,6 +60,12 @@ class CheckoutController extends Controller
   {
     $notification = session('notification');
     return view('front.checkout.result', compact('notification'));
+  }
+
+   public function failed()
+  {
+    $notification = session('notification');
+    return view('front.checkout.failed', compact('notification'));
   }
 
   public function sendMail($order, $total, $subtotal)

@@ -36,7 +36,7 @@
         <div class="col-12">
           <div class="checkout-page-login-wrap">
             <!--== Start Checkout Login Accordion ==-->
-            <div class="login-accordion" id="LoginAccordion">
+            {{-- <div class="login-accordion" id="LoginAccordion">
               <div class="card">
                 <h3>
                   <i class="fa fa-info-circle"></i>
@@ -115,7 +115,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!--== End Checkout Login Accordion ==-->
           </div>
         </div>
@@ -184,7 +184,7 @@
                         >Họ
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <input id="f_name" name="first_name" type="text" class="form-control" />
+                      <input id="f_name" name="first_name" type="text" class="form-control" required />
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -193,7 +193,7 @@
                         >Tên
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <input id="l_name" name="last_name" type="text" class="form-control" value="{{ Auth::user()->name ?? '' }}"" />
+                      <input id="l_name" name="last_name" type="text" class="form-control" value="{{ Auth::user()->name ?? '' }}"" required />
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -202,7 +202,7 @@
                         >Thành phố / Tỉnh
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <select id="country" class="form-control" name="calc_shipping_provinces" required="">
+                      <select id="country" class="form-control" name="calc_shipping_provinces" required>
                         <option value="">Tỉnh / Thành phố</option>
                       </select>
                     </div>
@@ -213,7 +213,7 @@
                         >Quận / Huyện
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <select id="town_city" class="form-control" name="calc_shipping_district" required="">
+                      <select id="town_city" class="form-control" name="calc_shipping_district" required>
                         <option value="">Quận / Huyện</option>
                       </select>
                     </div>
@@ -235,6 +235,7 @@
                         class="form-control"
                         placeholder="Số nhà, tên đường,..."
                         value="{{ Auth::user()->address ?? '' }}"
+                        required
                       />
                     </div>
 
@@ -249,7 +250,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="phone">Điện thoại <abbr class="required" title="required">*</abbr></label>
-                      <input id="phone" type="text" name="phone" class="form-control" value="{{ Auth::user()->phone ?? '' }}" />
+                      <input id="phone" type="text" name="phone" class="form-control" required value="{{ Auth::user()->phone ?? '' }}" />
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -258,51 +259,10 @@
                         >Email
                         <abbr class="required" title="required">*</abbr></label
                       >
-                      <input id="email" type="text" name="email" class="form-control" value="{{ Auth::user()->email ?? '' }}" />
+                      <input id="email" type="text" name="email" class="form-control" value="{{ Auth::user()->email ?? '' }}" required/>
                     </div>
                   </div>
-                  <div id="CheckoutBillingAccordion" class="col-md-12">
-                    <div
-                      class="checkout-box"
-                      data-margin-bottom="25"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#CheckoutOne"
-                      aria-expanded="false"
-                      role="toolbar"
-                    >
-                      <div class="custom-control custom-checkbox">
-                        <input
-                          type="checkbox"
-                          class="custom-control-input visually-hidden"
-                          id="CreateAccount"
-                        />
-                        <label class="custom-control-label" for="CreateAccount"
-                          >Create an account?</label
-                        >
-                      </div>
-                    </div>
-                    <div
-                      id="CheckoutOne"
-                      class="collapse"
-                      data-margin-top="30"
-                      data-bs-parent="#CheckoutBillingAccordion"
-                    >
-                      <div class="form-group">
-                        <label for="password"
-                          >Create account password
-                          <abbr class="required" title="required"
-                            >*</abbr
-                          ></label
-                        >
-                        <input
-                          id="password"
-                          type="password"
-                          class="form-control"
-                          placeholder="Password"
-                        />
-                      </div>
-                    </div>
-                  </div>
+
 
                   <div class="col-md-12">
                     <div class="form-group mb--0">
@@ -421,3 +381,4 @@
   </section>
 </main>
 @endsection
+

@@ -81,7 +81,7 @@
                 <td class="text-center">{{$user->email}}</td>
 
                 <td class="text-center">
-                  @if ($user->level == 0)
+                  @if ($user->level == 1)
                     Admin
                   @else
                     Người dùng

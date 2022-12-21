@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 10:17 AM
+-- Generation Time: Dec 21, 2022 at 05:02 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -49,13 +49,13 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `product_category_id`, `name`, `description`, `content`, `price`, `qty`, `discount`, `sku`, `status`, `tag`, `created_at`, `updated_at`) VALUES
 (1, 2, 'Nike Jordan 1 Low Đen Trắng REP', NULL, '', 850000, 20, 550000, '00012', 1, 'Giay', NULL, '2022-12-20 07:52:20'),
-(2, 2, 'Guangzhou sweater', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 35, 20, 13, NULL, 1, 'Clothing', NULL, NULL),
-(3, 2, 'Guangzhou sweater', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 35, 20, 34, NULL, 1, 'Clothing', NULL, NULL),
-(4, 1, 'Microfiber Wool Scarf', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 64, 20, 35, NULL, 1, 'Accessories', NULL, NULL),
-(5, 4, 'Men\'s Painted Hat', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 44, 20, 35, NULL, 0, 'Accessories', NULL, NULL),
-(6, 2, 'Converse Shoes', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 35, 20, 34, NULL, 1, 'Clothing', NULL, NULL),
-(7, 1, 'Pure Pineapple', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 64, 20, 35, NULL, 1, 'HandBag', NULL, NULL),
-(8, 1, '2 Layer Windbreaker', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 44, 20, 35, NULL, 1, 'Clothing', NULL, NULL);
+(2, 2, 'Adidas 8681 Ghi Kẻ Trắng SF', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 500000, 20, 450000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:44:33'),
+(3, 2, 'Nike Jordan 1 Low Xám REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 350000, 20, 300000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:44:54'),
+(4, 1, 'Adidas Ultra Boost 6.0 Trắng Xanh REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 400000, 20, 400000, NULL, 1, 'Accessories', NULL, '2022-12-21 02:45:13'),
+(5, 4, 'Giày MLB Mustard NY Da Lộn Kem REP 1:1', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 900000, 20, 650000, NULL, 0, 'Accessories', NULL, '2022-12-21 02:45:35'),
+(6, 2, 'Adidas Alphabounce Beyond REP Đen Kem', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 1000000, 20, 640000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:45:53'),
+(7, 1, 'Giày MLB Bigball Chunky Mono B Nâu REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 1000000, 20, 580000, NULL, 1, 'HandBag', NULL, '2022-12-21 02:46:08'),
+(8, 1, 'Nike Jordan 1 High Đen Trắng REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 850000, 20, 500000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:46:25');
 
 --
 -- Indexes for dumped tables

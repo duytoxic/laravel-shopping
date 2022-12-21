@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 10:23 AM
+-- Generation Time: Dec 21, 2022 at 05:02 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -50,7 +50,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `first_name`, `last_name`, `calc_shipping_provinces`, `calc_shipping_district`, `street_address`, `postcode_zip`, `email`, `phone`, `payment_type`, `note`, `status`, `created_at`, `updated_at`) VALUES
-(1, 6, 'Manh', 'Cao Mạnh', '41', 'Thành phố Vinh', '33 Phan Huy Ích', NULL, 'user2022@gmail.com', '+84987007985', 'pay_later', NULL, 1, '2022-12-19 18:31:04', '2022-12-19 18:31:04');
+(1, 6, 'Hoang', 'Hoàng Đình Bảo Trung', '41', 'Thành phố Vinh', '33 Phan Huy Ích', NULL, 'user2022@gmail.com', '+84987007985', 'pay_later', NULL, 1, '2022-12-19 18:31:04', '2022-12-19 18:31:04'),
+(2, 3, 'Hoang', 'Bảo Khánh', '41', 'Thành phố Vinh', '49 Phan Huy Chú, Trung Đô', NULL, 'baokhanh@gmail.com', '123456789', 'pay_later', NULL, 1, '2022-12-21 02:32:31', '2022-12-21 02:32:31'),
+(3, NULL, 'Văn', 'Siêu', '41', 'Thành phố Vinh', '182 Lê Duẩn', NULL, 'pvsieu@gmail.com', '01234170715', 'pay_later', NULL, 1, '2022-12-21 03:59:52', '2022-12-21 03:59:52');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +72,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

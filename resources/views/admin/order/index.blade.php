@@ -69,7 +69,7 @@
                   <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                       <div class="widget-content-left flex2">
-                        <div class="widget-heading">{{$order->last_name . ' ' . $order->first_name}}</div>
+                        <div class="widget-heading">{{$order->last_name}}</div>
                         <div class="widget-subheading opacity-7">
 
                         </div>
@@ -78,16 +78,17 @@
                   </div>
                 </td>
                 <td class="text-center">{{$order->calc_shipping_district}}</td>
-                <td class="text-center"></td>
+                <td class="text-center">{{$order->total}}</td>
                 <td class="text-center">
-                  <div class="badge badge-dark">Finish</div>
+
+                    <button class="btn btn-success btn-sm">Hoàn thành</button>
                 </td>
                 <td class="text-center">
                   <a
-                    href="./order-show.html"
+                    href="/admin/order/{{$order->id}}"
                     class="btn btn-hover-shine btn-outline-primary border-0 btn-sm"
                   >
-                    Details
+                    Chi tiết
                   </a>
                 </td>
               </tr>

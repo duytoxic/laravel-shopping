@@ -16,7 +16,7 @@ class InsertProductCommentSeeder extends Seeder
    */
   public function run()
   {
-    $path = base_path() . '/db/product_comment.sql';
+    $path = base_path() . '/db/product_comments.sql';
     $sql = file_get_contents($path);
     DB::unprepared($sql);
   }
