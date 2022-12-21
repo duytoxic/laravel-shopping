@@ -90,7 +90,7 @@
                 @if ($user->avatar != null)
                   <img src="./front/img/user/{{$user->avatar}}" alt="avatar" class="img-avatar">
                 @else
-                  <img src="./front/img/default-img.png" alt="avatar">
+                  <img src="./front/img/default-img.png" alt="avatar" class="img-avatar">
                 @endif
               </div>
             </div>

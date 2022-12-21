@@ -94,16 +94,18 @@
                       <i class="fa fa-edit fa-w-20"></i>
                     </span>
                   </a>
-                  <form class="d-inline" action="" method="post">
-                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit"
-                      data-toggle="tooltip" title="Delete" data-placement="bottom"
+                  <button
+                      class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
+                      type="submit"
+                      data-toggle="tooltip"
+                      title="Delete"
+                      data-placement="bottom"
                       onclick="confirm('Bạn có chắc muốn xóa người dùng này') === true ? window.location='./admin/user/delete/{{$user->id}}' : ''"
                     >
                       <span class="btn-icon-wrapper opacity-8">
                         <i class="fa fa-trash fa-w-20"></i>
                       </span>
                     </button>
-                  </form>
                 </td>
               </tr>
               @endforeach

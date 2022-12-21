@@ -123,7 +123,6 @@
                 <ul class="main-menu nav">
                   <li><a href="./"><span>Trang chủ</span></a></li>
                   <li><a href="./shop"><span>Sản phẩm</span></a></li>
-                  <li><a href="./contact"><span>Liên hệ</span></a></li>
                 </ul>
               </div>
             </div>

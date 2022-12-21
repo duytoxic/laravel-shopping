@@ -176,6 +176,7 @@
           <!--== Start Billing Accordion ==-->
           <div class="checkout-billing-details-wrap">
             <h2 class="title">Chi tiết đơn hàng</h2>
+            <input type="hidden" name="user_id" value="{{Auth::user()->id ?? 1 }}">
             <div class="billing-form-wrap">
                 <div class="row">
                   <div class="col-md-6">

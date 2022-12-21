@@ -3,7 +3,7 @@
 @section('body')
 <main class="main-content">
   <!--== Start Page Header Area Wrapper ==-->
-  <div class="page-header-area" data-bg-img="./front/assets/img/photos/bg3.webp">
+  <div class="page-header-area" data-bg-img="/front/img/photos/bg3.webp">
     <div class="container pt--0 pb--0">
       <div class="row">
         <div class="col-12">
@@ -91,52 +91,44 @@
                   <div class="myaccount-content">
                     <h3>Thông tin cá nhân</h3>
                     <div class="account-details-form">
-                      <form action="#">
+                      <form action="#" method="POST">
                         <div class="row">
                           <div class="col-lg-6">
                             <div class="single-input-item">
-                              <label for="first-name" class="required">First Name</label>
-                              <input type="text" id="first-name" />
+                              <label for="last-name" class="required">Họ và tên</label>
+                              <input type="text" id="last-name" name="name" value="{{Auth::user()->name}}"/>
                             </div>
                           </div>
                           <div class="col-lg-6">
                             <div class="single-input-item">
-                              <label for="last-name" class="required">Last Name</label>
-                              <input type="text" id="last-name" />
+                              <label for="email" class="required">Email</label>
+                              <input type="email" id="email" name="email" value="{{Auth::user()->email}}"/>
                             </div>
                           </div>
                         </div>
-                        <div class="single-input-item">
-                          <label for="display-name" class="required">Display Name</label>
-                          <input type="text" id="display-name" />
-                        </div>
-                        <div class="single-input-item">
-                          <label for="email" class="required">Email Addres</label>
-                          <input type="email" id="email" />
-                        </div>
                         <fieldset>
-                          <legend>Password change</legend>
+                          <legend>Thay đổi mật khẩu</legend>
                           <div class="single-input-item">
-                            <label for="current-pwd" class="required">Current Password</label>
+                            <label for="current-pwd" class="required">Mật khẩu hiện tại</label>
                             <input type="password" id="current-pwd" />
                           </div>
                           <div class="row">
                             <div class="col-lg-6">
                               <div class="single-input-item">
-                                <label for="new-pwd" class="required">New Password</label>
+                                <label for="new-pwd" class="required">Mật khẩu mới</label>
                                 <input type="password" id="new-pwd" />
                               </div>
                             </div>
                             <div class="col-lg-6">
                               <div class="single-input-item">
-                                <label for="confirm-pwd" class="required">Confirm Password</label>
+                                <label for="confirm-pwd" class="required">Xác nhận mật khẩu</label>
                                 <input type="password" id="confirm-pwd" />
                               </div>
                             </div>
                           </div>
                         </fieldset>
                         <div class="single-input-item">
-                          <button class="check-btn sqr-btn">Save Changes</button>
+                          <button class="check-btn sqr-btn" type="submit">Lưu</button>
                         </div>
                       </form>
                     </div>
