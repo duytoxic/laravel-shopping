@@ -93,10 +93,11 @@ Route::middleware('checkadminlogin')->prefix('/admin')->group(function(){
     Route::get('/delete/{id}', [admin\OrderController::class, 'destroy']);
   });
 
-  Route::get('/login', [admin\DashboardController::class, 'login']);
-  Route::post('/login', [admin\DashboardController::class, 'checkLogin']);
-
 });
 
+Route::prefix('/admin')->group(function(){
+  Route::get('/login', [admin\DashboardController::class, 'login']);
+  Route::post('/login', [admin\DashboardController::class, 'checkLogin']);
+});
 // Route::get('admin/dashboard', [admin\DashboardController::class, 'index']);
-Route::get('admin/login', [admin\DashboardController::class, 'login']);
+// Route::get('admin/login', [admin\DashboardController::class, 'login']);
