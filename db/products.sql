@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 05:02 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 07, 2023 at 01:30 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,14 +48,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_category_id`, `name`, `description`, `content`, `price`, `qty`, `discount`, `sku`, `status`, `tag`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Nike Jordan 1 Low Đen Trắng REP', NULL, '', 850000, 20, 550000, '00012', 1, 'Giay', NULL, '2022-12-20 07:52:20'),
+(1, 2, 'Nike Jordan 1 Low Đen Trắng REP', NULL, '', 850000, 20, 550000, '00012', 0, 'Giay', NULL, '2023-01-06 16:40:10'),
 (2, 2, 'Adidas 8681 Ghi Kẻ Trắng SF', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 500000, 20, 450000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:44:33'),
-(3, 2, 'Nike Jordan 1 Low Xám REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 350000, 20, 300000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:44:54'),
+(3, 2, 'Nike Jordan 1 Low Xám REP', 'Giày Nike Jordan 1 Low Xám REP chất lượng cao', NULL, 350000, 20, 300000, NULL, 1, 'Clothing', NULL, '2023-01-06 16:38:13'),
 (4, 1, 'Adidas Ultra Boost 6.0 Trắng Xanh REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 400000, 20, 400000, NULL, 1, 'Accessories', NULL, '2022-12-21 02:45:13'),
-(5, 4, 'Giày MLB Mustard NY Da Lộn Kem REP 1:1', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 900000, 20, 650000, NULL, 0, 'Accessories', NULL, '2022-12-21 02:45:35'),
+(5, 5, 'Giày MLB Mustard NY Da Lộn Kem REP 1:1', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 900000, 20, 650000, NULL, 0, 'Accessories', NULL, '2023-01-06 16:37:36'),
 (6, 2, 'Adidas Alphabounce Beyond REP Đen Kem', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 1000000, 20, 640000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:45:53'),
-(7, 1, 'Giày MLB Bigball Chunky Mono B Nâu REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 1000000, 20, 580000, NULL, 1, 'HandBag', NULL, '2022-12-21 02:46:08'),
-(8, 1, 'Nike Jordan 1 High Đen Trắng REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 850000, 20, 500000, NULL, 1, 'Clothing', NULL, '2022-12-21 02:46:25');
+(7, 7, 'Giày MLB Bigball Chunky Mono B Nâu REP', 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor', NULL, 1000000, 20, 580000, NULL, 1, 'HandBag', NULL, '2023-01-06 16:37:44');
 
 --
 -- Indexes for dumped tables

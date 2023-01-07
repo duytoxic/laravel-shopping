@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 05:03 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 07, 2023 at 01:28 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,12 +46,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `avatar`, `level`, `description`, `created_at`, `updated_at`) VALUES
-(2, 'admin', 'admin@gmail.com', NULL, '$2y$10$zn9sXMu1bL80Gtxc9ZqveOoP1bIXQ7L8oA.FvOuFxXLwap4f8Mc0i', NULL, NULL, '1', NULL, NULL, NULL),
-(3, 'Bảo Khánh', 'baokhanh@gmail.com', NULL, '$2y$10$aMvPMkl/FXXfGkfu8k.NkuZbg8LH90hHFtlBb5EToqC7Ah/kyRC6a', NULL, 'avatar-0.png', '2', 'Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum bore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud amodo', NULL, '2022-12-21 00:49:27'),
-(4, 'Phan Văn Siêu', 'sieupvs@gmail.com', NULL, '$2y$10$Pl10FO/eOwYdd/7mN3oJZO0aIdFKClwCblfLkU3Tt4OwO8z0nde.6', NULL, 'avatar-1.png', '2', NULL, NULL, '2022-12-21 00:49:52'),
-(5, 'Phan Văn Nhật', 'nhatpv@gmail.com', NULL, '$2y$10$K90wiAZekCnExWlKDZAyvOwrrs42VYyF1VxbrF9aKVinOCVPA1eaC', NULL, 'avatar-2.png', '2', NULL, NULL, '2022-12-21 00:51:26'),
-(6, 'Lê Duy Anh', 'duyanhle@gmail.com', NULL, '$2y$10$day9iM1tdTdz82PXS2hAkebT1JjJpuZm1hjRpKdv1OqgF5O6YU7qm', NULL, NULL, '2', NULL, '2022-12-19 17:50:56', '2022-12-21 00:51:42'),
-(7, 'Hoàng Khánh', 'khanhkyosin@gmail.com', NULL, '1234', NULL, NULL, '2', NULL, '2022-12-20 10:50:44', '2022-12-21 00:53:45');
+(2, 'admin', 'admin@gmail.com', NULL, '$2y$10$Pl10FO/eOwYdd/7mN3oJZO0aIdFKClwCblfLkU3Tt4OwO8z0nde.6', NULL, NULL, '1', NULL, NULL, NULL),
+(3, 'Nguyễn Xuân Gia Khánh', 'giakhanh@gmail.com', NULL, '$2y$10$aMvPMkl/FXXfGkfu8k.NkuZbg8LH90hHFtlBb5EToqC7Ah/kyRC6a', NULL, 'avatar-0.png', '2', NULL, NULL, '2023-01-06 16:48:00'),
+(4, 'Hoàng Quốc Cường', 'cuonghq@gmail.com', NULL, '$2y$10$Pl10FO/eOwYdd/7mN3oJZO0aIdFKClwCblfLkU3Tt4OwO8z0nde.6', NULL, 'avatar-1.png', '2', NULL, NULL, '2023-01-06 16:48:19'),
+(5, 'Nguyễn Công Hào', 'ngconghao@gmail.com', NULL, '$2y$10$K90wiAZekCnExWlKDZAyvOwrrs42VYyF1VxbrF9aKVinOCVPA1eaC', NULL, 'avatar-2.png', '2', NULL, NULL, '2023-01-06 16:48:37'),
+(7, 'Hoàng Khánh', 'khanhkyosin@gmail.com', NULL, '1234', NULL, NULL, '2', NULL, '2022-12-20 10:50:44', '2022-12-21 00:53:45'),
+(8, 'Cao Mạnh Duy', 'thongthoathich24h@gmail.com', NULL, '$2y$10$Pl10FO/eOwYdd/7mN3oJZO0aIdFKClwCblfLkU3Tt4OwO8z0nde.6', NULL, NULL, '1', NULL, '2023-01-06 15:31:50', '2023-01-06 16:49:16'),
+(10, 'Cao Mạnh Duy', 'duy2kruoiw@gmail.com', NULL, '$2y$10$fmQWbBUkA/H8FDeIThrJe.3Tin5fwvXA2FtmjQ4TNGv8VZJriiTUG', NULL, NULL, '2', NULL, '2023-01-07 00:11:40', '2023-01-07 00:11:40');
 
 --
 -- Indexes for dumped tables
@@ -72,7 +73,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

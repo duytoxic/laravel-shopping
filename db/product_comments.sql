@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 05:03 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 07, 2023 at 01:30 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,8 @@ CREATE TABLE `product_comments` (
 INSERT INTO `product_comments` (`id`, `product_id`, `user_id`, `email`, `name`, `messages`, `rating`, `created_at`, `updated_at`) VALUES
 (1, 1, 4, 'BrandonKelley@gmail.com', 'Quốc Khánh', 'Sản phẩm tuyệt vời', 4, NULL, NULL),
 (2, 1, 5, 'RoyBanks@gmail.com', 'Lâm Bảo', 'Tôi muốn biết thêm thông tin về sản phẩm thì xem như thể nào ạ', 4, NULL, NULL),
-(5, 1, 3, 'duy2kruoiw@gmail.com', 'Manh', 'Hello', 5, '2022-12-21 03:33:41', '2022-12-21 03:33:41');
+(5, 1, 3, 'duy2kruoiw@gmail.com', 'Manh', 'Hello', 5, '2022-12-21 03:33:41', '2022-12-21 03:33:41'),
+(7, 2, 10, 'duy2kruoiw@gmail.com', 'Cao Mạnh Duy', 'Sản phẩm tốt, giao hàng nhanh!', 5, '2023-01-07 00:17:28', '2023-01-07 00:17:28');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `product_comments`
 -- AUTO_INCREMENT for table `product_comments`
 --
 ALTER TABLE `product_comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

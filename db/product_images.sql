@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 05:03 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 07, 2023 at 01:29 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,7 +50,7 @@ INSERT INTO `product_images` (`id`, `product_id`, `path`, `created_at`, `updated
 (8, 6, '8.webp', NULL, NULL),
 (9, 7, 'list-2.webp', NULL, NULL),
 (10, 8, 'list-3.webp', NULL, NULL),
-(11, 9, 'list-5.webp', NULL, NULL);
+(19, 1, 'download.jpg', '2023-01-06 18:41:27', '2023-01-06 18:41:27');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +70,7 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
