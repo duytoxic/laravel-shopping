@@ -316,4 +316,27 @@
     }
     scrollToTop();
 
+    // $('.pro-qty').click(()=>{
+    //   var button = $(this);
+    //   var oldValue = button.parent().find('input').val();
+    //   const rowId = button.parent().find('input').data('rowId')
+    //   console.log(button.parent().find('input'))
+    // })
+
+    // function updateCart(rowId, qty){
+    //   $.ajax({
+    //     type: 'POST',
+    //     url: "cart/update",
+    //     data: {rowId: rowId, qty:qty},
+    //     success: function (response){
+    //       alert('update cart');
+    //       console.log(response);location.reload();
+    //     },
+    //     error: function (error){
+    //       alert('update cart');
+    //       console.log(error);location.reload();
+    //     },
+    //   })
+    // }
+
 })(window.jQuery);

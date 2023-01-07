@@ -60,8 +60,8 @@ class ProductController extends Controller
     public function show($id)
     {
       $product = Product::find($id);
-
-      return view('admin.product.show', compact('product'));
+      $categories = ProductCategory::all();
+      return view('admin.product.show', compact('product', 'categories'));
     }
 
     /**
@@ -73,7 +73,8 @@ class ProductController extends Controller
     public function edit($id)
     {
       $product = Product::findOrFail($id);
-      return view('admin.product.edit', compact('product'));
+      $categories = ProductCategory::all();
+      return view('admin.product.edit', compact('product', 'categories'));
     }
 
     /**

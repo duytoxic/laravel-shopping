@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+  public function index(Request $request)
+  {
+
+    return view('admin.dashboard.index');
+  }
+
   public function login()
   {
     return view('admin.account.login');

@@ -9,7 +9,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
-  public function add($id)
+  public function add($id, Request $request)
   {
     $product = Product::findOrFail($id);
 
@@ -20,7 +20,7 @@ class CartController extends Controller
       'price' => $product->discount ?? $product->price,
       'weight' => 0,
       // 'color' => '',
-      // 'size' => '',
+      'size' => '',
       'options' => [
         'images' => $product->productImages,
       ],
@@ -46,7 +46,9 @@ class CartController extends Controller
   public function update(Request $request)
   {
     Cart::update($request->rowId, $request->qty);
-
+    // if($request->ajax()){
+    //   Cart::update($request->rowId, $request->qty);
+    // }
     return back();
   }
 

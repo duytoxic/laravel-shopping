@@ -14,3 +14,8 @@
 .notification h3{
   font-size: 26px !important;
 }
+
+.product-thumb .product-image{
+  height: 274px !important;
+  object-fit: cover;
+}

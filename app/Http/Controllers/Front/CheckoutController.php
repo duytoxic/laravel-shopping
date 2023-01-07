@@ -40,7 +40,7 @@ class CheckoutController extends Controller
         ];
         OrderDetail::create($data);
       }
-
+// dd($order);
       //send mail
       $total = Cart::total();
       $subtotal = Cart::subtotal();

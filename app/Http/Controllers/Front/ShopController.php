@@ -13,7 +13,7 @@ class ShopController extends Controller
   public function index(Request $request)
   {
     // get categories
-    $categories = ProductCategory::all();
+    $categories = ProductCategory::all(); //categories
     $countCategories = ProductCategory::withCount('products')->get();
 
     // get products

@@ -86,7 +86,7 @@
               >Giá</label
             >
             <div class="col-md-9 col-xl-8">
-              <p>{{ $product->price }}đ</p>
+              <p>{{number_format($product->price, 0, '', ',')}}đ</p>
             </div>
           </div>
 
@@ -95,7 +95,7 @@
               >Giá giảm</label
             >
             <div class="col-md-9 col-xl-8">
-              <p>{{ $product->discount }}đ</p>
+              <p>{{number_format($product->discount, 0, '', ',')}}đ</p>
             </div>
           </div>
 
@@ -105,15 +105,6 @@
             >
             <div class="col-md-9 col-xl-8">
               <p>{{ $product->sku }}</p>
-            </div>
-          </div>
-
-          <div class="position-relative row form-group">
-            <label for="tag" class="col-md-3 text-md-right col-form-label"
-              >Tag</label
-            >
-            <div class="col-md-9 col-xl-8">
-              <p>{{ $product->tag }}</p>
             </div>
           </div>
 

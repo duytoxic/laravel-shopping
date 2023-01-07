@@ -76,26 +76,16 @@
                   </div>
                 </div>
                 <p>{{$product->description}}</p>
-                {{-- <div class="product-size">
-                  <h6 class="title">Size</h6>
-                  <ul class="size-list">
-                    <li>S</li>
-                    <li class="active">M</li>
-                    <li>L</li>
-                    <li>XL</li>
-                  </ul>
-                </div> --}}
-                <div class="product-quick-action">
-                  <div class="qty-wrap">
-                    <div class="pro-qty">
-                      <input type="text" title="Quantity" value="1" name="qty">
+
+                  <div class="product-quick-action">
+                    <div class="qty-wrap">
+                      <div class="pro-qty">
+                        <input type="text" title="Quantity" value="1" name="qty">
+                      </div>
                     </div>
+                    <a class="btn-theme" href="./cart/add/{{$product->id}}">Thêm vào giỏ hàng</a>
                   </div>
-                  <a class="btn-theme" href="./cart/add/{{$product->id}}">Thêm vào giỏ hàng</a>
-                </div>
-                <div class="product-info-footer mt-2">
-                  <h6 class="code"><span>Code :</span>Ch-256xl</h6>
-                </div>
+
               </div>
               <!--== End Product Info Area ==-->
             </div>
@@ -149,20 +139,20 @@
                         <div class="col-md-12">
                           <div class="form-group">
                             <label for="for_name">Tên</label>
-                            <input id="for_name" class="form-control" name="name" type="text" placeholder="Tên">
+                            <input id="for_name" class="form-control" name="name" type="text" value="{{Auth::user()->name ?? ''}}" required placeholder="Tên">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
                             <label for="for_email">Email</label>
-                            <input id="for_email" class="form-control" name="email" type="email" placeholder="Email">
+                            <input id="for_email" class="form-control" name="email" value="{{Auth::user()->email ?? ''}}" type="email" required placeholder="Email">
                           </div>
                         </div>
 
                         <div class="col-md-12">
                           <div class="form-group">
                             <label for="for_comment">Nội dung (1500)</label>
-                            <textarea id="for_comment" class="form-control" name="messages" placeholder="Nội dung"></textarea>
+                            <textarea id="for_comment" class="form-control" name="messages" required placeholder="Nội dung"></textarea>
                           </div>
                         </div>
                         <div class="col-md-12">
@@ -190,8 +180,7 @@
                           @endfor
                       </ul>
                     </div>
-                    <h3 class="title">{{$productCmt->name}}!</h3>
-                    <h5 class="sub-title"><span>{{$productCmt->user->name}}</span> - <span>{{ date('M d, Y', strtotime($productCmt->create_at)) }}</span></h5>
+                    <h5 class="sub-title"><span>{{$productCmt->user->name}}</span> </h5>
                     <p>{{$productCmt->messages}}</p>
                   </div>
                 @endforeach

@@ -47,6 +47,7 @@
                   <td class="product-remove">
                     <a onclick="window.location='./cart/delete/{{$cart->rowId}}'"><i class="fa fa-trash-o"></i></a>
                   </td>
+                  <input type="hidden" value="{{$cart->rowId}}" name="rowId">
                   <td class="product-thumb">
                     <a href="./shop/product/">
                       <img src="front/img/shop/{{$cart->options->images[0]->path ?? null}}" width="90" height="110" alt="Image-HasTech">
@@ -56,26 +57,29 @@
                     <h4 class="title"><a href="single-product.html">{{$cart->name}}</a></h4>
                   </td>
                   <td class="product-price">
-                    <span class="price">{{$cart->price}}đ</span>
+                    <span class="price">{{number_format($cart->price * $cart->qty, 0, '', ',')}}đ</span>
                   </td>
                   <td class="product-quantity">
                     <div class="pro-qty">
-                      <input type="text" class="quantity" title="Quantity" value="{{ $cart->qty }}">
+                      <input type="text" class="quantity" title="Quantity" value="{{ $cart->qty }}" data-rowId="{{$cart->rowId}}">
                     </div>
                   </td>
                   <td class="product-subtotal">
-                    <span class="price">{{ number_format($cart->price * $cart->qty,2) }}đ</span>
+                    <span class="price">{{ number_format($cart->price * $cart->qty, 0, '', ',') }}đ</span>
                   </td>
                 </tr>
                 @endforeach
                 <tr class="actions">
                   <td class="border-0" colspan="6">
                     <button type="submit" class="update-cart" disabled>Cập nhật giỏ hàng</button>
+                    {{-- <a href="cart/update">Cập nhật giỏ hàng</a> --}}
+                    {{-- <input type="submit" value="Cập nhật giỏ hàng"> --}}
                     <button type="submit" class="clear-cart" onclick="confirm('Bạn có chắc muốn xóa giỏ hàng') === true ? window.location='./cart/removeAll' : ''">Xóa giỏ hàng</button>
                     <a href="/shop" class="btn-theme btn-flat">Tiếp tục mua sắm</a>
                   </td>
                 </tr>
               </tbody>
+
             </table>
             @else
             <div class="col-lg-12">
@@ -100,14 +104,14 @@
           <div class="cart-total-table">
             <table class="table">
               <tbody>
-                <tr class="cart-subtotal">
+                {{-- <tr class="cart-subtotal">
                   <td>
                     <p class="value">Tổng tiền</p>
                   </td>
                   <td>
                     <p class="price">{{$subtotal}}đ</p>
                   </td>
-                </tr>
+                </tr> --}}
                 <tr class="order-total">
                   <td>
                     <p class="value">Tổng</p>

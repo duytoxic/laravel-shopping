@@ -70,7 +70,7 @@
                 >Vai trò</label
               >
               <div class="col-md-9 col-xl-8">
-                <select class="form-control" name="level" id="level">
+                {{-- <select class="form-control" name="level" id="level">
                   @if ($user->level == 0)
                     <option value="{{$user->level}}" selected>Admin</option>
                     <option value="1">Người dùng</option>
@@ -78,10 +78,19 @@
                     <option value="0">Admin</option>
                     <option value="{{$user->level}}" selected>Người dùng</option>
                   @endif
-                </select>
+
+                </select> --}}
+                <select class="form-control" name="level" id="level">
+                  <option value="2" @if ($user->level == 2)
+                      selected
+                  @endif>Người dùng</option>
+                  <option value="1" @if ($user->level == 1)
+                    selected
+                @endif>Admin</option>
+              </select>
               </div>
             </div>
-
+{{--
             <div class="position-relative row form-group">
               <label for="name" class="col-md-3 text-md-right col-form-label"
                 >Ảnh đại diện</label
@@ -93,7 +102,7 @@
                   <img src="/img/default-img.png" alt="avatar" class="img-avatar">
                 @endif
               </div>
-            </div>
+            </div> --}}
 
             <div class="position-relative row form-group mb-1">
               <div class="col-md-9 col-xl-8 offset-md-2">

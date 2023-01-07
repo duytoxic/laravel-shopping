@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Order;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -20,11 +21,10 @@ class AccountController extends Controller
     $credentials = [
       'email' => $request->email,
       'password' => $request->password,
-      'level' => 2 // customer,
+      // 'level' => 1 || 2 // customer or admin,
     ];
 
     $remember = $request->remember;
-
 
     if (Auth::attempt($credentials, $remember)) {
       return redirect('/');
@@ -46,7 +46,7 @@ class AccountController extends Controller
     $data = [
       'name' => $request->name,
       'email' => $request->email,
-      'password' => bcrypt($request->password),
+      'password' => Hash::make($request->password),
       'level' => 2,
     ];
 

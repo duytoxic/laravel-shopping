@@ -83,7 +83,7 @@
               <div class="header-middle-align-center">
                 <div class="header-search-area">
                   <form class="header-searchbox" action="shop">
-                    <input type="search" name="search" class="form-control" placeholder="Search" value="{{request('search')}}">
+                    <input type="search" name="search" class="form-control" placeholder="Tìm kiếm" value="{{request('search')}}">
                     <button class="btn-submit" type="submit"><i class="pe-7s-search"></i></button>
                   </form>
                 </div>
@@ -215,6 +215,8 @@
         @endforeach
       </ul>
       <p class="cart-total"><span>Tổng:</span><span class="amount">
+        {{-- {{number_format(Cart::total(), 0, ',', '.')}}đ</span></p> --}}
+
         {{Cart::total()}}đ</span></p>
       <a class="btn-theme" data-margin-bottom="10" href="./cart">Xem giỏ hàng</a>
       <a class="btn-theme" href="./checkout">Thanh toán</a>
@@ -236,7 +238,7 @@
           </div>
           <form action="#" method="post">
             <div class="search-form position-relative">
-              <label for="search-input" class="visually-hidden">Search</label>
+              <label for="search-input" class="visually-hidden">Tìm kiếm</label>
               <input id="search-input" type="search" class="form-control" placeholder="Search entire store…">
               <button class="search-button"><i class="fa fa-search"></i></button>
             </div>

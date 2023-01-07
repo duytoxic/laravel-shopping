@@ -104,20 +104,16 @@
                             </div>
                             <div class="product-info">
                               <div class="category">
-                                <ul>
-                                  <li><a href="shop.html">Men</a></li>
-                                  <li class="sep">/</li>
-                                  <li><a href="shop.html">Women</a></li>
-                                </ul>
+                                <a href="/shop">{{$product->productCategory->name}}</a>
                               </div>
                               <h4 class="title"><a href="/shop/product/{{$product->id}}">{{$product->name}}</a></h4>
                               <div class="prices">
                                 @if ($product->discount != null)
-                                  <span class="price-old">{{$product->price}}đ</span>
+                                  <span class="price-old">{{number_format($product->price, 0, '', ',')}}đ</span>
                                   <span class="sep">-</span>
-                                  <span class="price">{{$product->discount}}đ</span>
+                                  <span class="price">{{number_format($product->discount, 0, '', ',')}}đ</span>
                                 @else
-                                  <span class="price">{{$product->price}}đ</span>
+                                  <span class="price">{{number_format($product->price, 0, '', ',')}}đ</span>
                                 @endif
                               </div>
                               <p>{{$product->description}}</p>
@@ -157,18 +153,6 @@
                 </div>
               </div>
 
-              <div class="shop-sidebar-size">
-                <h4 class="sidebar-title">Size</h4>
-                <div class="sidebar-size">
-                  <ul class="size-list">
-                    <li><a href="/shop">S <span>(6)</span></a></li>
-                    <li><a href="/shop">M <span>(4)</span></a></li>
-                    <li><a href="/shop">L <span>(2)</span></a></li>
-                    <li><a href="/shop">XL <span>(6)</span></a></li>
-                    <li><a href="/shop">XXL <span>(12)</span></a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>

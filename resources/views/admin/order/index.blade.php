@@ -56,7 +56,6 @@
                 <th class="text-center">STT</th>
                 <th>Khách hàng / Sản phẩm</th>
                 <th class="text-center">Địa chỉ</th>
-                <th class="text-center">Tổng tiền</th>
                 <th class="text-center">Trạng thái</th>
                 <th class="text-center">Hành động</th>
               </tr>
@@ -78,7 +77,6 @@
                   </div>
                 </td>
                 <td class="text-center">{{$order->calc_shipping_district}}</td>
-                <td class="text-center">{{$order->total}}</td>
                 <td class="text-center">
 
                     <button class="btn btn-success btn-sm">Hoàn thành</button>

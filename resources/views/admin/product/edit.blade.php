@@ -53,7 +53,7 @@
                   placeholder="Giá"
                   type="text"
                   class="form-control"
-                  value="{{number_format($product->price, 0, '', ',')}}"
+                  value="{{$product->price}}"
                 />
               </div>
             </div>
@@ -70,25 +70,23 @@
                   placeholder="Giá"
                   type="text"
                   class="form-control"
-                  value="{{number_format($product->discount, 0, '', ',')}}"
+                  value="{{$product->discount}}"
                 />
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="tag" class="col-md-3 text-md-right col-form-label"
-                >Tag</label
+              <label for="product_category_id" class="col-md-3 text-md-right col-form-label"
+                >Danh mục</label
               >
               <div class="col-md-9 col-xl-8">
-                <input
-                  required
-                  name="tag"
-                  id="tag"
-                  placeholder="Giá"
-                  type="text"
-                  class="form-control"
-                  value="{{$product->tag}}"
-                />
+                <select class="form-control" name="product_category_id" id="product_category_id">
+                  @foreach ($categories as $category)
+                    <option value="{{$category->id}}" @if ($category->id == $product->product_category_id)
+                      selected
+                    @endif>{{$category->name}}</option>
+                  @endforeach
+                </select>
               </div>
             </div>
 
@@ -98,6 +96,23 @@
               >
               <div class="col-md-9 col-xl-8">
                 <textarea name="description" class="form-control" id="description" cols="30" rows="3">{{$product->description}}</textarea>
+              </div>
+            </div>
+
+
+            <div class="position-relative row form-group">
+              <div class="col-lg-3 text-md-right">
+                <label for="status" class="text-right">Trạng thái</label>
+              </div>
+              <div class="col-md-9 col-xl-8">
+                <select class="form-control" name="status" id="status">
+                  <option value="1" @if ($product->status == 1)
+                      selected
+                  @endif>Hiện</option>
+                  <option value="0" @if ($product->status == 0)
+                    selected
+                @endif>Ẩn</option>
+              </select>
               </div>
             </div>
 

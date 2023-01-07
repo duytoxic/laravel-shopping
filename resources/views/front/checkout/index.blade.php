@@ -17,7 +17,7 @@
               data-aos-duration="1200"
             >
               <ul class="breadcrumb">
-                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="/">Trang chủ</a></li>
                 <li class="breadcrumb-sep">//</li>
                 <li>Thanh toán</li>
               </ul>
@@ -34,139 +34,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="checkout-page-login-wrap">
-            <!--== Start Checkout Login Accordion ==-->
-            {{-- <div class="login-accordion" id="LoginAccordion">
-              <div class="card">
-                <h3>
-                  <i class="fa fa-info-circle"></i>
-                  Returning customer?
-                  <a
-                    href="#/"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#loginaccordion"
-                    >Click here to login</a
-                  >
-                </h3>
-                <div
-                  id="loginaccordion"
-                  class="collapse"
-                  data-bs-parent="#LoginAccordion"
-                >
-                  <div class="card-body">
-                    <div class="login-wrap">
-                      <p>
-                        If you have shopped with us before, please enter your
-                        details below. If you are a new customer, please proceed
-                        to the Billing & Shipping section.
-                      </p>
-                      <form action="#" method="post">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="logEmail"
-                                >Username or email
-                                <span class="required">*</span></label
-                              >
-                              <input
-                                id="logEmail"
-                                class="form-control"
-                                type="email"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group left-m">
-                              <label for="logPass"
-                                >Password <span class="required">*</span></label
-                              >
-                              <input
-                                id="logPass"
-                                class="form-control"
-                                type="password"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group mt-30">
-                              <button class="btn-login">Login</button>
-                              <div class="rememberme-account">
-                                <div class="custom-control custom-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input visually-hidden"
-                                    id="remembermePass"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="remembermePass"
-                                    >Remember me</label
-                                  >
-                                </div>
-                              </div>
-                              <a class="lost-password" href="#"
-                                >Lost your password?</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
-            <!--== End Checkout Login Accordion ==-->
-          </div>
+
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="checkout-page-coupon-wrap">
-            <!--== Start Checkout Coupon Accordion ==-->
-            <div class="coupon-accordion" id="CouponAccordion">
-              <div class="card">
-                <h3>
-                  <i class="fa fa-info-circle"></i>
-                  Have a Coupon?
-                  <a
-                    href="#/"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#couponaccordion"
-                    >Click here to enter your code</a
-                  >
-                </h3>
-                <div
-                  id="couponaccordion"
-                  class="collapse"
-                  data-bs-parent="#CouponAccordion"
-                >
-                  <div class="card-body">
-                    <div class="apply-coupon-wrap mb-60">
-                      <p>If you have a coupon code, please apply it below.</p>
-                      <form action="#" method="post">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <input
-                                class="form-control"
-                                type="text"
-                                placeholder="Coupon code"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <button class="btn-coupon">Apply coupon</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--== End Checkout Coupon Accordion ==-->
-          </div>
+
         </div>
       </div>
       <form action="" method="post">
@@ -300,18 +173,14 @@
                     <td class="product-name">
                       {{$cart->name}}<span class="product-quantity">× {{$cart->qty}}</span>
                     </td>
-                    <td class="product-total">{{ number_format($cart->price * $cart->qty,2) }}đ</td>
+                    <td class="product-total">{{ number_format($cart->price * $cart->qty , 0, '', ',')}}đ</td>
                   </tr>
                   @endforeach
                 </tbody>
                 <tfoot class="table-foot">
-                  <tr class="cart-subtotal">
-                    <th>Subtotal</th>
-                    <td>{{$subtotal}}</td>
-                  </tr>
                   <tr class="order-total">
                     <th>Tổng tiền</th>
-                    <td>{{$total}}</td>
+                    <td>{{$total}}đ</td>
                   </tr>
                 </tfoot>
               </table>
@@ -357,6 +226,7 @@
                       type="checkbox"
                       id="privacy"
                       class="custom-control-input visually-hidden"
+                      required
                     />
                     <label for="privacy" class="custom-control-label"
                       >Tôi đã đọc và đồng ý với các điều khoản và điều kiện của website

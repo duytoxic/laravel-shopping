@@ -19,11 +19,10 @@ use App\Models\User;
 Route::get('/', [front\HomeController::class, 'index']);
 
 Route::prefix('/shop')->group(function(){
-  Route::get('/product/{id}', [front\ShopController::class, 'detail']);
+  Route::get('/product/{id}', [front\ShopController::class, 'detail']); //shop
+  Route::middleware('checkuserlogin')->post('/product/{id}', [front\ShopController::class, 'postComment']);
 
-  Route::post('/product/{id}', [front\ShopController::class, 'postComment']);
-
-  Route::get('/', [front\ShopController::class, 'index']);
+  Route::get('/', [front\ShopController::class, 'index']); //shop
   Route::get('/{categoryName}', [front\ShopController::class, 'category']);
 });
 
@@ -32,14 +31,17 @@ Route::prefix('/cart')->group(function(){
   Route::get('/', [front\CartController::class, 'index']);
   Route::get('/delete/{rowId}', [front\CartController::class, 'delete']);
   Route::get('/removeAll', [front\CartController::class, 'removeAll']);
+  // Route::post('/update', [front\CartController::class, 'update']);
 });
 
-Route::prefix('/checkout')->group(function(){
+Route::middleware('checkuserlogin')->prefix('/checkout')->group(function(){
   Route::get('/', [front\CheckoutController::class, 'index']);
   Route::post('/', [front\CheckoutController::class, 'addOrder']);
   Route::get('/result', [front\CheckoutController::class, 'result']);
   Route::get('/failed', [front\CheckoutController::class, 'failed']);
 });
+
+// Route::middleware('checkuserlogin')->get('/checkout', [front\CheckoutController::class, 'index']);
 
 Route::prefix('/account')->group(function(){
   Route::get('/login', [front\AccountController::class, 'login']);
@@ -53,7 +55,8 @@ Route::prefix('/account')->group(function(){
 });
 
 //Admin
-Route::prefix('/admin')->group(function(){
+Route::middleware('checkadminlogin')->prefix('/admin')->group(function(){
+  Route::get('/', [admin\DashboardController::class, 'index']);
   Route::prefix('/user')->group(function(){
     Route::get('/', [admin\UserController::class, 'index']);
     Route::get('/create', [admin\UserController::class, 'create']);
@@ -80,6 +83,7 @@ Route::prefix('/admin')->group(function(){
 
     Route::get('/{product_id}', [admin\ProductController::class, 'show']);
     Route::get('/{product_id}/image', [admin\ProductImageController::class, 'index']);
+    Route::post('/{product_id}/image', [admin\ProductImageController::class, 'store']);
   });
 
   Route::prefix('/order')->group(function(){
@@ -91,5 +95,8 @@ Route::prefix('/admin')->group(function(){
 
   Route::get('/login', [admin\DashboardController::class, 'login']);
   Route::post('/login', [admin\DashboardController::class, 'checkLogin']);
-  Route::get('/dashboard', [admin\DashboardController::class, 'dashboard']);
+
 });
+
+// Route::get('admin/dashboard', [admin\DashboardController::class, 'index']);
+Route::get('admin/login', [admin\DashboardController::class, 'login']);
