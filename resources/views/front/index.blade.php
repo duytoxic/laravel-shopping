@@ -130,7 +130,7 @@
   <!--== End Product Area Wrapper ==-->
 
   <!--== Start Divider Area Wrapper ==-->
-  <section class="bg-color-f2 position-relative z-index-1">
+  <!-- <section class="bg-color-f2 position-relative z-index-1">
     <div class="container pt--0 pb--0">
       <div class="row divider-wrap divider-style1">
         <div class="col-lg-6">
@@ -146,7 +146,7 @@
     <div class="bg-layer-wrap">
       <div class="bg-layer-style z-index--1 parallax" data-speed="1.05" data-bg-img="front/img/photos/bg1.webp"></div>
     </div>
-  </section>
+  </section> -->
   <!--== End Divider Area Wrapper ==-->
 
   <!--== Start Product Area Wrapper ==-->
