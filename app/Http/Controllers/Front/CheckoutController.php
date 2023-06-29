@@ -25,7 +25,7 @@ class CheckoutController extends Controller
     if ($request->payment_type == 'pay_later') {
       // add order
       $data = $request->all();
-      $data['status'] = 1;
+      $data['status'] = 0;
       $order = Order::create($data);
 
       // add order detail
@@ -52,7 +52,7 @@ class CheckoutController extends Controller
       //return result
       return redirect('checkout/result')->with('notification', 'Đăng ký mua hàng thành công!');
     } else{
-      return redirect('checkout/failed')->with('notification', 'Đăng ký mua hàng thành công!');
+      return redirect('checkout/failed')->with('notification', 'Mua hàng thất bại!');
     }
   }
 

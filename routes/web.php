@@ -88,6 +88,7 @@ Route::middleware('checkadminlogin')->prefix('/admin')->group(function(){
 
   Route::prefix('/order')->group(function(){
     Route::get('/', [admin\OrderController::class, 'index']);
+    Route::get('/{id}', [admin\OrderController::class, 'show']);
     Route::get('/{id}/edit', [admin\OrderController::class, 'edit']);
     Route::post('/{id}/edit', [admin\OrderController::class, 'update']);
     Route::get('/delete/{id}', [admin\OrderController::class, 'destroy']);

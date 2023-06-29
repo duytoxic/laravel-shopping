@@ -78,8 +78,11 @@
                 </td>
                 <td class="text-center">{{$order->calc_shipping_district}}</td>
                 <td class="text-center">
-
+                  @if($order->status == 1)
                     <button class="btn btn-success btn-sm">Hoàn thành</button>
+                  @else
+                    <button class="btn btn-warning btn-sm">Đang chờ xác nhận</button>
+                  @endif
                 </td>
                 <td class="text-center">
                   <a
